@@ -1,0 +1,6827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Visualization Website</title>
+  <link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href = "style2.css">
+  <style>
+        body {background-color:rgb(226, 225, 225)}
+  </style>
+</head>
+
+
+<body>
+        <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Lattitude</a>
+                  </div>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="maxtemp.html">Max Temperature</a></li>
+                          <li><a href="humidity.html">Humidity</a></li>
+                          <li><a href="Cloudiness.html">Cloudiness</a></li>
+                          <li><a href="windspeed.html">Wind Speed</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="comparison.html">Comparison</a></li>
+                      <li><a href="data.html">Data</a></li>
+                    </ul>
+                  </div>
+                </div>
+        </nav>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">   
+        <div class="title">
+            <h1>Data</h1>
+            <p>The following data includes all the data used for plotting during this project.</p>
+            <hr>
+            <br> 
+    <table id= "maintable" border="1" class="dataframe">
+  <thead>
+    <tr id = "mainheader" style="text-align: center;">
+        <table class="table table-bordered table-hover table-condensed">
+<thead><tr><th title="Field #1">City</th>
+<th title="Field #2">Cloudiness</th>
+<th title="Field #3">Country</th>
+<th title="Field #4">Date</th>
+<th title="Field #5">Humidity</th>
+<th title="Field #6">Lat</th>
+<th title="Field #7">Lng</th>
+<th title="Field #8">Max Temp</th>
+<th title="Field #9">Wind Speed</th>
+</tr></thead>
+<tbody><tr>
+<td>bretzfeld</td>
+<td align="right">0</td>
+<td>DE</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">49.18</td>
+<td align="right">9.44</td>
+<td align="right">45</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>punta arenas</td>
+<td align="right">20</td>
+<td>CL</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">-53.16</td>
+<td align="right">-70.91</td>
+<td align="right">48.2</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>saint george</td>
+<td align="right">40</td>
+<td>GR</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">39.45</td>
+<td align="right">22.34</td>
+<td align="right">41</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>port elizabeth</td>
+<td align="right">40</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">60</td>
+<td align="right">39.31</td>
+<td align="right">-74.98</td>
+<td align="right">42.01</td>
+<td align="right">17.22</td>
+</tr>
+<tr>
+<td>atuona</td>
+<td align="right">32</td>
+<td>PF</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">-9.8</td>
+<td align="right">-139.03</td>
+<td align="right">82.58</td>
+<td align="right">15.82</td>
+</tr>
+<tr>
+<td>qurunbaliyah</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>rikitea</td>
+<td align="right">88</td>
+<td>PF</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-23.12</td>
+<td align="right">-134.97</td>
+<td align="right">78.35</td>
+<td align="right">18.84</td>
+</tr>
+<tr>
+<td>hilo</td>
+<td align="right">75</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">19.71</td>
+<td align="right">-155.08</td>
+<td align="right">73.99</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>tuktoyaktuk</td>
+<td align="right">75</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">76</td>
+<td align="right">69.44</td>
+<td align="right">-133.03</td>
+<td align="right">-4.01</td>
+<td align="right">19.46</td>
+</tr>
+<tr>
+<td>hermanus</td>
+<td align="right">12</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">89</td>
+<td align="right">-34.42</td>
+<td align="right">19.24</td>
+<td align="right">64</td>
+<td align="right">5.01</td>
+</tr>
+<tr>
+<td>mount isa</td>
+<td align="right">40</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">43</td>
+<td align="right">-20.73</td>
+<td align="right">139.49</td>
+<td align="right">89.6</td>
+<td align="right">14.99</td>
+</tr>
+<tr>
+<td>iracoubo</td>
+<td align="right">92</td>
+<td>GF</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">5.48</td>
+<td align="right">-53.21</td>
+<td align="right">76.82</td>
+<td align="right">6.2</td>
+</tr>
+<tr>
+<td>butaritari</td>
+<td align="right">88</td>
+<td>KI</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">3.07</td>
+<td align="right">172.79</td>
+<td align="right">77.18</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>lampazos de naranjo</td>
+<td align="right">36</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">27.02</td>
+<td align="right">-100.51</td>
+<td align="right">67.19</td>
+<td align="right">7.99</td>
+</tr>
+<tr>
+<td>kattivakkam</td>
+<td align="right">40</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">13.22</td>
+<td align="right">80.32</td>
+<td align="right">87.8</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>souillac</td>
+<td align="right">0</td>
+<td>FR</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">45.6</td>
+<td align="right">-0.6</td>
+<td align="right">43</td>
+<td align="right">4.29</td>
+</tr>
+<tr>
+<td>hakvik</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>dubai</td>
+<td align="right">0</td>
+<td>AE</td>
+<td>03/22/19</td>
+<td align="right">47</td>
+<td align="right">25.27</td>
+<td align="right">55.3</td>
+<td align="right">78.01</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>tsihombe</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>arraial do cabo</td>
+<td align="right">56</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">-22.97</td>
+<td align="right">-42.02</td>
+<td align="right">76.37</td>
+<td align="right">8.88</td>
+</tr>
+<tr>
+<td>umm lajj</td>
+<td align="right">24</td>
+<td>SA</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">25.02</td>
+<td align="right">37.27</td>
+<td align="right">60.08</td>
+<td align="right">5.3</td>
+</tr>
+<tr>
+<td>castro</td>
+<td align="right">90</td>
+<td>CL</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-42.48</td>
+<td align="right">-73.76</td>
+<td align="right">55.4</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>tasiilaq</td>
+<td align="right">68</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">43</td>
+<td align="right">65.61</td>
+<td align="right">-37.64</td>
+<td align="right">12.2</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>qaanaaq</td>
+<td align="right">20</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">77.48</td>
+<td align="right">-69.36</td>
+<td align="right">-29.57</td>
+<td align="right">9.33</td>
+</tr>
+<tr>
+<td>pevek</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">76</td>
+<td align="right">69.7</td>
+<td align="right">170.27</td>
+<td align="right">-3.38</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>albany</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">80</td>
+<td align="right">42.65</td>
+<td align="right">-73.75</td>
+<td align="right">34</td>
+<td align="right">25.28</td>
+</tr>
+<tr>
+<td>saint-philippe</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">45.36</td>
+<td align="right">-73.48</td>
+<td align="right">36</td>
+<td align="right">21.92</td>
+</tr>
+<tr>
+<td>basco</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">40.33</td>
+<td align="right">-91.2</td>
+<td align="right">46.99</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>guzelyurt</td>
+<td align="right">0</td>
+<td>TR</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">38.28</td>
+<td align="right">34.37</td>
+<td align="right">27</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>mataura</td>
+<td align="right">64</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">48</td>
+<td align="right">-46.19</td>
+<td align="right">168.86</td>
+<td align="right">76.82</td>
+<td align="right">5.19</td>
+</tr>
+<tr>
+<td>sergeyevka</td>
+<td align="right">48</td>
+<td>KZ</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">53.88</td>
+<td align="right">67.42</td>
+<td align="right">20.84</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>halifax</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">44.65</td>
+<td align="right">-63.58</td>
+<td align="right">39</td>
+<td align="right">20.8</td>
+</tr>
+<tr>
+<td>salihli</td>
+<td align="right">0</td>
+<td>TR</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">38.48</td>
+<td align="right">28.15</td>
+<td align="right">33.17</td>
+<td align="right">2.06</td>
+</tr>
+<tr>
+<td>houma</td>
+<td align="right">32</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">43</td>
+<td align="right">35.63</td>
+<td align="right">111.36</td>
+<td align="right">49.64</td>
+<td align="right">2.28</td>
+</tr>
+<tr>
+<td>kapaa</td>
+<td align="right">75</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">78</td>
+<td align="right">22.08</td>
+<td align="right">-159.32</td>
+<td align="right">78.8</td>
+<td align="right">20.8</td>
+</tr>
+<tr>
+<td>cidreira</td>
+<td align="right">56</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">-30.17</td>
+<td align="right">-50.22</td>
+<td align="right">63.5</td>
+<td align="right">10.67</td>
+</tr>
+<tr>
+<td>pangai</td>
+<td align="right">20</td>
+<td>TO</td>
+<td>03/22/19</td>
+<td align="right">61</td>
+<td align="right">-19.8</td>
+<td align="right">-174.35</td>
+<td align="right">82.4</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>morant bay</td>
+<td align="right">20</td>
+<td>JM</td>
+<td>03/22/19</td>
+<td align="right">69</td>
+<td align="right">17.88</td>
+<td align="right">-76.41</td>
+<td align="right">78.8</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>bredasdorp</td>
+<td align="right">24</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">-34.53</td>
+<td align="right">20.04</td>
+<td align="right">64</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>bluff</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">50</td>
+<td align="right">-23.58</td>
+<td align="right">149.07</td>
+<td align="right">90.32</td>
+<td align="right">8.21</td>
+</tr>
+<tr>
+<td>geraldton</td>
+<td align="right">5</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">61</td>
+<td align="right">49.72</td>
+<td align="right">-86.95</td>
+<td align="right">14</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>tabukiniberu</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>lagoa</td>
+<td align="right">0</td>
+<td>PT</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">37.14</td>
+<td align="right">-8.45</td>
+<td align="right">57</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>avarua</td>
+<td align="right">100</td>
+<td>CK</td>
+<td>03/22/19</td>
+<td align="right">78</td>
+<td align="right">-21.21</td>
+<td align="right">-159.78</td>
+<td align="right">82.4</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>busselton</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">28</td>
+<td align="right">-33.64</td>
+<td align="right">115.35</td>
+<td align="right">72</td>
+<td align="right">13.24</td>
+</tr>
+<tr>
+<td>svetlaya</td>
+<td align="right">32</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">46.54</td>
+<td align="right">138.33</td>
+<td align="right">24.8</td>
+<td align="right">5.41</td>
+</tr>
+<tr>
+<td>bethel</td>
+<td align="right">75</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">60.79</td>
+<td align="right">-161.76</td>
+<td align="right">42.8</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>airai</td>
+<td align="right">8</td>
+<td>TL</td>
+<td>03/22/19</td>
+<td align="right">57</td>
+<td align="right">-8.93</td>
+<td align="right">125.41</td>
+<td align="right">84.56</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>yulara</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">10</td>
+<td align="right">-25.24</td>
+<td align="right">130.99</td>
+<td align="right">104</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>lompoc</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">34.64</td>
+<td align="right">-120.46</td>
+<td align="right">55.4</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>marsabit</td>
+<td align="right">0</td>
+<td>KE</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">2.34</td>
+<td align="right">37.99</td>
+<td align="right">72.68</td>
+<td align="right">6.87</td>
+</tr>
+<tr>
+<td>cape town</td>
+<td align="right">0</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">-33.93</td>
+<td align="right">18.42</td>
+<td align="right">68</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>sungairaya</td>
+<td align="right">20</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">0.7</td>
+<td align="right">108.9</td>
+<td align="right">87.53</td>
+<td align="right">3.51</td>
+</tr>
+<tr>
+<td>tomatlan</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">19.93</td>
+<td align="right">-105.25</td>
+<td align="right">68.27</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>barrow</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">-38.31</td>
+<td align="right">-60.23</td>
+<td align="right">60.98</td>
+<td align="right">12.57</td>
+</tr>
+<tr>
+<td>necochea</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">-38.55</td>
+<td align="right">-58.74</td>
+<td align="right">59</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>puerto ayora</td>
+<td align="right">0</td>
+<td>EC</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">-0.74</td>
+<td align="right">-90.35</td>
+<td align="right">79</td>
+<td align="right">10.45</td>
+</tr>
+<tr>
+<td>saryshagan</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>westport</td>
+<td align="right">56</td>
+<td>IE</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">53.8</td>
+<td align="right">-9.52</td>
+<td align="right">45</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>canavieiras</td>
+<td align="right">76</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-15.68</td>
+<td align="right">-38.95</td>
+<td align="right">78.08</td>
+<td align="right">5.97</td>
+</tr>
+<tr>
+<td>taolanaro</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>vaini</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">21</td>
+<td align="right">15.34</td>
+<td align="right">74.49</td>
+<td align="right">84.2</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>jamestown</td>
+<td align="right">100</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">67</td>
+<td align="right">-33.21</td>
+<td align="right">138.6</td>
+<td align="right">73.22</td>
+<td align="right">12.91</td>
+</tr>
+<tr>
+<td>half moon bay</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">37.46</td>
+<td align="right">-122.43</td>
+<td align="right">55.99</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>illoqqortoormiut</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>hasaki</td>
+<td align="right">75</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">35.73</td>
+<td align="right">140.83</td>
+<td align="right">41</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>goure</td>
+<td align="right">8</td>
+<td>NE</td>
+<td>03/22/19</td>
+<td align="right">29</td>
+<td align="right">13.98</td>
+<td align="right">10.27</td>
+<td align="right">72.5</td>
+<td align="right">10.89</td>
+</tr>
+<tr>
+<td>ushuaia</td>
+<td align="right">90</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">-54.81</td>
+<td align="right">-68.31</td>
+<td align="right">46.4</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>thompson</td>
+<td align="right">20</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">55.74</td>
+<td align="right">-97.86</td>
+<td align="right">35.6</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>lai</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">27.82</td>
+<td align="right">91.75</td>
+<td align="right">38.93</td>
+<td align="right">1.61</td>
+</tr>
+<tr>
+<td>isiro</td>
+<td align="right">0</td>
+<td>CD</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">2.77</td>
+<td align="right">27.62</td>
+<td align="right">70.07</td>
+<td align="right">2.06</td>
+</tr>
+<tr>
+<td>palabuhanratu</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>upernavik</td>
+<td align="right">20</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">72.79</td>
+<td align="right">-56.15</td>
+<td align="right">-13.91</td>
+<td align="right">6.64</td>
+</tr>
+<tr>
+<td>olafsvik</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>east london</td>
+<td align="right">0</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-33.02</td>
+<td align="right">27.91</td>
+<td align="right">69.8</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>nanortalik</td>
+<td align="right">48</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">60.14</td>
+<td align="right">-45.24</td>
+<td align="right">31.82</td>
+<td align="right">29.46</td>
+</tr>
+<tr>
+<td>komsomolskiy</td>
+<td align="right">88</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">67.55</td>
+<td align="right">63.78</td>
+<td align="right">18.59</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>chupei</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>lewiston</td>
+<td align="right">20</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">46.42</td>
+<td align="right">-117.02</td>
+<td align="right">51.8</td>
+<td align="right">1.95</td>
+</tr>
+<tr>
+<td>luderitz</td>
+<td align="right">0</td>
+<td> </td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">-26.65</td>
+<td align="right">15.16</td>
+<td align="right">57.11</td>
+<td align="right">7.87</td>
+</tr>
+<tr>
+<td>mayo</td>
+<td align="right">20</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">43</td>
+<td align="right">63.59</td>
+<td align="right">-135.9</td>
+<td align="right">50</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>imeni babushkina</td>
+<td align="right">64</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">91</td>
+<td align="right">59.76</td>
+<td align="right">43.13</td>
+<td align="right">25.07</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>katherine</td>
+<td align="right">36</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">59</td>
+<td align="right">-14.47</td>
+<td align="right">132.26</td>
+<td align="right">91.4</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>kaitangata</td>
+<td align="right">24</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-46.28</td>
+<td align="right">169.85</td>
+<td align="right">64.85</td>
+<td align="right">8.99</td>
+</tr>
+<tr>
+<td>hobart</td>
+<td align="right">75</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">-42.88</td>
+<td align="right">147.33</td>
+<td align="right">68</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>paamiut</td>
+<td align="right">8</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">61.99</td>
+<td align="right">-49.67</td>
+<td align="right">19.85</td>
+<td align="right">23.87</td>
+</tr>
+<tr>
+<td>miri</td>
+<td align="right">56</td>
+<td>NG</td>
+<td>03/22/19</td>
+<td align="right">57</td>
+<td align="right">10.31</td>
+<td align="right">9.75</td>
+<td align="right">72.86</td>
+<td align="right">4.63</td>
+</tr>
+<tr>
+<td>borba</td>
+<td align="right">0</td>
+<td>PT</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">38.81</td>
+<td align="right">-7.46</td>
+<td align="right">43.97</td>
+<td align="right">7.99</td>
+</tr>
+<tr>
+<td>esperance</td>
+<td align="right">75</td>
+<td>TT</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">10.24</td>
+<td align="right">-61.45</td>
+<td align="right">78.01</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>chuy</td>
+<td align="right">36</td>
+<td>UY</td>
+<td>03/22/19</td>
+<td align="right">89</td>
+<td align="right">-33.69</td>
+<td align="right">-53.46</td>
+<td align="right">62.15</td>
+<td align="right">7.09</td>
+</tr>
+<tr>
+<td>ndola</td>
+<td align="right">12</td>
+<td>ZM</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">-12.97</td>
+<td align="right">28.64</td>
+<td align="right">64.13</td>
+<td align="right">8.99</td>
+</tr>
+<tr>
+<td>muncar</td>
+<td align="right">80</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-8.43</td>
+<td align="right">114.34</td>
+<td align="right">78.8</td>
+<td align="right">3.18</td>
+</tr>
+<tr>
+<td>port alfred</td>
+<td align="right">68</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">95</td>
+<td align="right">-33.59</td>
+<td align="right">26.89</td>
+<td align="right">64.99</td>
+<td align="right">12.46</td>
+</tr>
+<tr>
+<td>san rafael</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">68</td>
+<td align="right">-34.61</td>
+<td align="right">-68.33</td>
+<td align="right">51.53</td>
+<td align="right">4.52</td>
+</tr>
+<tr>
+<td>severo-kurilsk</td>
+<td align="right">88</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">95</td>
+<td align="right">50.68</td>
+<td align="right">156.12</td>
+<td align="right">32.18</td>
+<td align="right">9.33</td>
+</tr>
+<tr>
+<td>pisco</td>
+<td align="right">0</td>
+<td>PE</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-13.71</td>
+<td align="right">-76.2</td>
+<td align="right">69.8</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>broome</td>
+<td align="right">24</td>
+<td>GB</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">52.47</td>
+<td align="right">1.45</td>
+<td align="right">48.2</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>verkhoyansk</td>
+<td align="right">32</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">58</td>
+<td align="right">67.55</td>
+<td align="right">133.39</td>
+<td align="right">4.28</td>
+<td align="right">3.74</td>
+</tr>
+<tr>
+<td>calderitas</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">18.55</td>
+<td align="right">-88.26</td>
+<td align="right">78.44</td>
+<td align="right">11.23</td>
+</tr>
+<tr>
+<td>apastovo</td>
+<td align="right">90</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">55.2</td>
+<td align="right">48.51</td>
+<td align="right">30.2</td>
+<td align="right">8.95</td>
+</tr>
+<tr>
+<td>sakaiminato</td>
+<td align="right">90</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">35.55</td>
+<td align="right">133.23</td>
+<td align="right">41</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>calatayud</td>
+<td align="right">0</td>
+<td>ES</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">41.35</td>
+<td align="right">-1.64</td>
+<td align="right">42.8</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>san cristobal</td>
+<td align="right">40</td>
+<td>EC</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">-0.39</td>
+<td align="right">-78.55</td>
+<td align="right">53.6</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>bambous virieux</td>
+<td align="right">75</td>
+<td>MU</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-20.34</td>
+<td align="right">57.76</td>
+<td align="right">82.4</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>san patricio</td>
+<td align="right">0</td>
+<td>PY</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-26.98</td>
+<td align="right">-56.83</td>
+<td align="right">61.25</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>dikson</td>
+<td align="right">64</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">73.51</td>
+<td align="right">80.55</td>
+<td align="right">1.04</td>
+<td align="right">19.06</td>
+</tr>
+<tr>
+<td>belushya guba</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>bacuit</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>nago</td>
+<td align="right">0</td>
+<td>IT</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">45.88</td>
+<td align="right">10.89</td>
+<td align="right">48</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>chagoda</td>
+<td align="right">88</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">59.16</td>
+<td align="right">35.33</td>
+<td align="right">32.81</td>
+<td align="right">5.53</td>
+</tr>
+<tr>
+<td>lorengau</td>
+<td align="right">44</td>
+<td>PG</td>
+<td>03/22/19</td>
+<td align="right">97</td>
+<td align="right">-2.02</td>
+<td align="right">147.27</td>
+<td align="right">83.48</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>viligili</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>amol</td>
+<td align="right">0</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">36.47</td>
+<td align="right">52.35</td>
+<td align="right">42.35</td>
+<td align="right">0.72</td>
+</tr>
+<tr>
+<td>manzil jamil</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>willowmore</td>
+<td align="right">48</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">-33.3</td>
+<td align="right">23.49</td>
+<td align="right">46.67</td>
+<td align="right">2.39</td>
+</tr>
+<tr>
+<td>jalu</td>
+<td align="right">0</td>
+<td>LY</td>
+<td>03/22/19</td>
+<td align="right">89</td>
+<td align="right">29.03</td>
+<td align="right">21.55</td>
+<td align="right">57.11</td>
+<td align="right">5.41</td>
+</tr>
+<tr>
+<td>kondinskoye</td>
+<td align="right">88</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">59.65</td>
+<td align="right">67.41</td>
+<td align="right">29.03</td>
+<td align="right">5.41</td>
+</tr>
+<tr>
+<td>bela</td>
+<td align="right">8</td>
+<td>PK</td>
+<td>03/22/19</td>
+<td align="right">34</td>
+<td align="right">26.23</td>
+<td align="right">66.31</td>
+<td align="right">62.42</td>
+<td align="right">2.28</td>
+</tr>
+<tr>
+<td>cabo san lucas</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">22.89</td>
+<td align="right">-109.91</td>
+<td align="right">69.01</td>
+<td align="right">5.41</td>
+</tr>
+<tr>
+<td>vaitupu</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>codrington</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">44</td>
+<td align="right">-28.95</td>
+<td align="right">153.24</td>
+<td align="right">93.2</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>srednekolymsk</td>
+<td align="right">8</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">67.46</td>
+<td align="right">153.71</td>
+<td align="right">17.33</td>
+<td align="right">4.52</td>
+</tr>
+<tr>
+<td>tenerife</td>
+<td align="right">12</td>
+<td>CO</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">9.9</td>
+<td align="right">-74.86</td>
+<td align="right">76.91</td>
+<td align="right">13.02</td>
+</tr>
+<tr>
+<td>port moresby</td>
+<td align="right">90</td>
+<td>PG</td>
+<td>03/22/19</td>
+<td align="right">78</td>
+<td align="right">-9.47</td>
+<td align="right">147.16</td>
+<td align="right">82.4</td>
+<td align="right">25.28</td>
+</tr>
+<tr>
+<td>correntina</td>
+<td align="right">92</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">98</td>
+<td align="right">-13.34</td>
+<td align="right">-44.63</td>
+<td align="right">68.18</td>
+<td align="right">3.29</td>
+</tr>
+<tr>
+<td>koungou</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>bandarbeyla</td>
+<td align="right">56</td>
+<td>SO</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">9.49</td>
+<td align="right">50.81</td>
+<td align="right">77.9</td>
+<td align="right">7.31</td>
+</tr>
+<tr>
+<td>boende</td>
+<td align="right">8</td>
+<td>CD</td>
+<td>03/22/19</td>
+<td align="right">97</td>
+<td align="right">-0.28</td>
+<td align="right">20.88</td>
+<td align="right">71.78</td>
+<td align="right">2.39</td>
+</tr>
+<tr>
+<td>vardo</td>
+<td align="right">75</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">51</td>
+<td align="right">39.62</td>
+<td align="right">-77.74</td>
+<td align="right">39.2</td>
+<td align="right">19.46</td>
+</tr>
+<tr>
+<td>nizhneyansk</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>sitka</td>
+<td align="right">88</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">97</td>
+<td align="right">37.17</td>
+<td align="right">-99.65</td>
+<td align="right">45</td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td>taoudenni</td>
+<td align="right">44</td>
+<td>ML</td>
+<td>03/22/19</td>
+<td align="right">21</td>
+<td align="right">22.68</td>
+<td align="right">-3.98</td>
+<td align="right">68.72</td>
+<td align="right">11.68</td>
+</tr>
+<tr>
+<td>kodiak</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">21</td>
+<td align="right">39.95</td>
+<td align="right">-94.76</td>
+<td align="right">53.01</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>new norfolk</td>
+<td align="right">75</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">-42.78</td>
+<td align="right">147.06</td>
+<td align="right">68</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>dingle</td>
+<td align="right">12</td>
+<td>PH</td>
+<td>03/22/19</td>
+<td align="right">54</td>
+<td align="right">11</td>
+<td align="right">122.67</td>
+<td align="right">86.72</td>
+<td align="right">10.45</td>
+</tr>
+<tr>
+<td>hobyo</td>
+<td align="right">88</td>
+<td>SO</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">5.35</td>
+<td align="right">48.53</td>
+<td align="right">78.89</td>
+<td align="right">12.01</td>
+</tr>
+<tr>
+<td>karlstad</td>
+<td align="right">92</td>
+<td>SE</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">59.38</td>
+<td align="right">13.5</td>
+<td align="right">42.8</td>
+<td align="right">14.99</td>
+</tr>
+<tr>
+<td>lebu</td>
+<td align="right">0</td>
+<td>ET</td>
+<td>03/22/19</td>
+<td align="right">78</td>
+<td align="right">8.96</td>
+<td align="right">38.73</td>
+<td align="right">45.5</td>
+<td align="right">4.07</td>
+</tr>
+<tr>
+<td>mar del plata</td>
+<td align="right">88</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">-46.43</td>
+<td align="right">-67.52</td>
+<td align="right">60.44</td>
+<td align="right">14.36</td>
+</tr>
+<tr>
+<td>saleaula</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>uige</td>
+<td align="right">92</td>
+<td>AO</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">-7.61</td>
+<td align="right">15.06</td>
+<td align="right">67.73</td>
+<td align="right">1.61</td>
+</tr>
+<tr>
+<td>aranos</td>
+<td align="right">48</td>
+<td> </td>
+<td>03/22/19</td>
+<td align="right">29</td>
+<td align="right">-24.14</td>
+<td align="right">19.11</td>
+<td align="right">70.43</td>
+<td align="right">7.31</td>
+</tr>
+<tr>
+<td>roald</td>
+<td align="right">48</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">62.58</td>
+<td align="right">6.12</td>
+<td align="right">41</td>
+<td align="right">35.57</td>
+</tr>
+<tr>
+<td>galiwinku</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>kenai</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">56</td>
+<td align="right">60.55</td>
+<td align="right">-151.26</td>
+<td align="right">44.6</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>auki</td>
+<td align="right">20</td>
+<td>NG</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">12.18</td>
+<td align="right">6.51</td>
+<td align="right">68.09</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>amasya</td>
+<td align="right">0</td>
+<td>TR</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">40.65</td>
+<td align="right">35.83</td>
+<td align="right">27</td>
+<td align="right">2.17</td>
+</tr>
+<tr>
+<td>yellowknife</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">62.45</td>
+<td align="right">-114.38</td>
+<td align="right">23</td>
+<td align="right">13.87</td>
+</tr>
+<tr>
+<td>nawabganj</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">32</td>
+<td align="right">26.86</td>
+<td align="right">82.14</td>
+<td align="right">73.04</td>
+<td align="right">11.45</td>
+</tr>
+<tr>
+<td>port hedland</td>
+<td align="right">75</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">-20.31</td>
+<td align="right">118.58</td>
+<td align="right">86</td>
+<td align="right">21.92</td>
+</tr>
+<tr>
+<td>filadelfia</td>
+<td align="right">100</td>
+<td>PY</td>
+<td>03/22/19</td>
+<td align="right">76</td>
+<td align="right">-22.35</td>
+<td align="right">-60.04</td>
+<td align="right">75.2</td>
+<td align="right">6.31</td>
+</tr>
+<tr>
+<td>la primavera</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">-32.92</td>
+<td align="right">-68.67</td>
+<td align="right">62.6</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>ladushkin</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">54.57</td>
+<td align="right">20.17</td>
+<td align="right">33.8</td>
+<td align="right">11.18</td>
+</tr>
+<tr>
+<td>shache</td>
+<td align="right">8</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">38.42</td>
+<td align="right">77.24</td>
+<td align="right">37.99</td>
+<td align="right">1.01</td>
+</tr>
+<tr>
+<td>moree</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">26</td>
+<td align="right">-29.46</td>
+<td align="right">149.84</td>
+<td align="right">96.8</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>catamarca</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>ankazoabo</td>
+<td align="right">0</td>
+<td>MG</td>
+<td>03/22/19</td>
+<td align="right">84</td>
+<td align="right">-22.29</td>
+<td align="right">44.51</td>
+<td align="right">69.98</td>
+<td align="right">6.53</td>
+</tr>
+<tr>
+<td>sawtell</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">-30.38</td>
+<td align="right">153.1</td>
+<td align="right">89.6</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>porto novo</td>
+<td align="right">75</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-23.68</td>
+<td align="right">-45.44</td>
+<td align="right">64.4</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>barsovo</td>
+<td align="right">90</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">61.17</td>
+<td align="right">73.17</td>
+<td align="right">26.6</td>
+<td align="right">4.47</td>
+</tr>
+<tr>
+<td>coihaique</td>
+<td align="right">0</td>
+<td>CL</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">-45.58</td>
+<td align="right">-72.07</td>
+<td align="right">51.8</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>charters towers</td>
+<td align="right">88</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">-20.07</td>
+<td align="right">146.27</td>
+<td align="right">79.79</td>
+<td align="right">11.68</td>
+</tr>
+<tr>
+<td>bella union</td>
+<td align="right">48</td>
+<td>CO</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">8.5</td>
+<td align="right">-73.35</td>
+<td align="right">65.48</td>
+<td align="right">1.83</td>
+</tr>
+<tr>
+<td>vostok</td>
+<td align="right">56</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">43</td>
+<td align="right">46.45</td>
+<td align="right">135.83</td>
+<td align="right">21.02</td>
+<td align="right">4.74</td>
+</tr>
+<tr>
+<td>altayskoye</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">69</td>
+<td align="right">51.95</td>
+<td align="right">85.34</td>
+<td align="right">26.33</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>maniitsoq</td>
+<td align="right">0</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">65.42</td>
+<td align="right">-52.9</td>
+<td align="right">-12.02</td>
+<td align="right">8.99</td>
+</tr>
+<tr>
+<td>lata</td>
+<td align="right">20</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">55</td>
+<td align="right">30.78</td>
+<td align="right">78.62</td>
+<td align="right">45.05</td>
+<td align="right">2.17</td>
+</tr>
+<tr>
+<td>grao mogol</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>mahebourg</td>
+<td align="right">75</td>
+<td>MU</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-20.41</td>
+<td align="right">57.7</td>
+<td align="right">82.4</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>ibra</td>
+<td align="right">44</td>
+<td>OM</td>
+<td>03/22/19</td>
+<td align="right">98</td>
+<td align="right">22.69</td>
+<td align="right">58.55</td>
+<td align="right">60.62</td>
+<td align="right">2.28</td>
+</tr>
+<tr>
+<td>kahului</td>
+<td align="right">40</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">57</td>
+<td align="right">20.89</td>
+<td align="right">-156.47</td>
+<td align="right">78.8</td>
+<td align="right">19.46</td>
+</tr>
+<tr>
+<td>torbay</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">47.66</td>
+<td align="right">-52.73</td>
+<td align="right">37.99</td>
+<td align="right">28.86</td>
+</tr>
+<tr>
+<td>marrakesh</td>
+<td align="right">0</td>
+<td>MA</td>
+<td>03/22/19</td>
+<td align="right">46</td>
+<td align="right">31.63</td>
+<td align="right">-7.99</td>
+<td align="right">53.6</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>yaounde</td>
+<td align="right">40</td>
+<td>CM</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">3.87</td>
+<td align="right">11.52</td>
+<td align="right">66.2</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>misratah</td>
+<td align="right">48</td>
+<td>LY</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">32.38</td>
+<td align="right">15.09</td>
+<td align="right">56.57</td>
+<td align="right">11.79</td>
+</tr>
+<tr>
+<td>faya</td>
+<td align="right">0</td>
+<td>SA</td>
+<td>03/22/19</td>
+<td align="right">51</td>
+<td align="right">18.39</td>
+<td align="right">42.45</td>
+<td align="right">60.8</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>georgetown</td>
+<td align="right">0</td>
+<td>GY</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">6.8</td>
+<td align="right">-58.16</td>
+<td align="right">73.4</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>atar</td>
+<td align="right">76</td>
+<td>MR</td>
+<td>03/22/19</td>
+<td align="right">55</td>
+<td align="right">20.52</td>
+<td align="right">-13.05</td>
+<td align="right">73.22</td>
+<td align="right">15.14</td>
+</tr>
+<tr>
+<td>marsa matruh</td>
+<td align="right">40</td>
+<td>EG</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">31.35</td>
+<td align="right">27.25</td>
+<td align="right">60.8</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>kavieng</td>
+<td align="right">8</td>
+<td>PG</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-2.57</td>
+<td align="right">150.8</td>
+<td align="right">82.4</td>
+<td align="right">7.87</td>
+</tr>
+<tr>
+<td>kisangani</td>
+<td align="right">76</td>
+<td>CD</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">0.52</td>
+<td align="right">25.21</td>
+<td align="right">71.33</td>
+<td align="right">2.39</td>
+</tr>
+<tr>
+<td>te anau</td>
+<td align="right">24</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">48</td>
+<td align="right">-45.41</td>
+<td align="right">167.72</td>
+<td align="right">71.51</td>
+<td align="right">3.62</td>
+</tr>
+<tr>
+<td>tautira</td>
+<td align="right">20</td>
+<td>PF</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">-17.73</td>
+<td align="right">-149.15</td>
+<td align="right">86</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>quatre cocos</td>
+<td align="right">75</td>
+<td>MU</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-20.21</td>
+<td align="right">57.76</td>
+<td align="right">82.4</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>ninotsminda</td>
+<td align="right">20</td>
+<td>GE</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">41.27</td>
+<td align="right">43.59</td>
+<td align="right">19.4</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>berdigestyakh</td>
+<td align="right">76</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">62.1</td>
+<td align="right">126.7</td>
+<td align="right">14.81</td>
+<td align="right">5.86</td>
+</tr>
+<tr>
+<td>ribeira grande</td>
+<td align="right">92</td>
+<td>PT</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">38.52</td>
+<td align="right">-28.7</td>
+<td align="right">60.8</td>
+<td align="right">12.68</td>
+</tr>
+<tr>
+<td>ust-maya</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">51</td>
+<td align="right">60.42</td>
+<td align="right">134.54</td>
+<td align="right">7.52</td>
+<td align="right">3.74</td>
+</tr>
+<tr>
+<td>caraballeda</td>
+<td align="right">40</td>
+<td>VE</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">10.61</td>
+<td align="right">-66.85</td>
+<td align="right">78.8</td>
+<td align="right">10.56</td>
+</tr>
+<tr>
+<td>zhangjiakou</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">40.77</td>
+<td align="right">114.88</td>
+<td align="right">29.48</td>
+<td align="right">6.08</td>
+</tr>
+<tr>
+<td>hithadhoo</td>
+<td align="right">48</td>
+<td>MV</td>
+<td>03/22/19</td>
+<td align="right">98</td>
+<td align="right">-0.6</td>
+<td align="right">73.08</td>
+<td align="right">86.09</td>
+<td align="right">5.3</td>
+</tr>
+<tr>
+<td>muscle shoals</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">34.75</td>
+<td align="right">-87.67</td>
+<td align="right">52</td>
+<td align="right">7.43</td>
+</tr>
+<tr>
+<td>viedma</td>
+<td align="right">12</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">61</td>
+<td align="right">-40.81</td>
+<td align="right">-62.99</td>
+<td align="right">58.19</td>
+<td align="right">6.53</td>
+</tr>
+<tr>
+<td>salalah</td>
+<td align="right">40</td>
+<td>OM</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">17.01</td>
+<td align="right">54.1</td>
+<td align="right">78.8</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>tubruq</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>shingu</td>
+<td align="right">20</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">33.72</td>
+<td align="right">135.99</td>
+<td align="right">51.8</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>letterkenny</td>
+<td align="right">48</td>
+<td>IE</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">54.95</td>
+<td align="right">-7.73</td>
+<td align="right">45.86</td>
+<td align="right">22.08</td>
+</tr>
+<tr>
+<td>leningradskiy</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">69.38</td>
+<td align="right">178.42</td>
+<td align="right">-9.77</td>
+<td align="right">5.41</td>
+</tr>
+<tr>
+<td>dingli</td>
+<td align="right">40</td>
+<td>MT</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">35.86</td>
+<td align="right">14.38</td>
+<td align="right">57.2</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>chokurdakh</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">85</td>
+<td align="right">70.62</td>
+<td align="right">147.9</td>
+<td align="right">-2.75</td>
+<td align="right">8.99</td>
+</tr>
+<tr>
+<td>borger</td>
+<td align="right">8</td>
+<td>NL</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">52.92</td>
+<td align="right">6.79</td>
+<td align="right">45</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>korla</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>batsfjord</td>
+<td align="right">80</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">70.63</td>
+<td align="right">29.72</td>
+<td align="right">33.26</td>
+<td align="right">28.34</td>
+</tr>
+<tr>
+<td>poum</td>
+<td align="right">40</td>
+<td>MK</td>
+<td>03/22/19</td>
+<td align="right">51</td>
+<td align="right">41.28</td>
+<td align="right">20.71</td>
+<td align="right">39.2</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>hokota</td>
+<td align="right">75</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">36.26</td>
+<td align="right">140.53</td>
+<td align="right">41</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>havre-saint-pierre</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">50.23</td>
+<td align="right">-63.6</td>
+<td align="right">33.8</td>
+<td align="right">19.46</td>
+</tr>
+<tr>
+<td>san juan</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">68</td>
+<td align="right">-31.54</td>
+<td align="right">-68.53</td>
+<td align="right">55.67</td>
+<td align="right">0.94</td>
+</tr>
+<tr>
+<td>antofagasta</td>
+<td align="right">0</td>
+<td>CL</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">-23.65</td>
+<td align="right">-70.4</td>
+<td align="right">62.6</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>daru</td>
+<td align="right">80</td>
+<td>SL</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">7.99</td>
+<td align="right">-10.85</td>
+<td align="right">75.65</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>asau</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>ambulu</td>
+<td align="right">20</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-8.35</td>
+<td align="right">113.61</td>
+<td align="right">82.76</td>
+<td align="right">2.17</td>
+</tr>
+<tr>
+<td>hay river</td>
+<td align="right">40</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">60.82</td>
+<td align="right">-115.79</td>
+<td align="right">26.6</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>baneh</td>
+<td align="right">0</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">35.99</td>
+<td align="right">45.88</td>
+<td align="right">35.6</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>acapulco</td>
+<td align="right">5</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">78</td>
+<td align="right">16.86</td>
+<td align="right">-99.88</td>
+<td align="right">80.6</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>grindavik</td>
+<td align="right">40</td>
+<td>IS</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">63.84</td>
+<td align="right">-22.43</td>
+<td align="right">33.01</td>
+<td align="right">31.09</td>
+</tr>
+<tr>
+<td>curanilahue</td>
+<td align="right">48</td>
+<td>CL</td>
+<td>03/22/19</td>
+<td align="right">89</td>
+<td align="right">-37.48</td>
+<td align="right">-73.35</td>
+<td align="right">52.07</td>
+<td align="right">5.75</td>
+</tr>
+<tr>
+<td>gurgan</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>college</td>
+<td align="right">75</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">48</td>
+<td align="right">64.86</td>
+<td align="right">-147.8</td>
+<td align="right">50</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>la paz</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">67</td>
+<td align="right">24.15</td>
+<td align="right">-110.32</td>
+<td align="right">63.95</td>
+<td align="right">7.65</td>
+</tr>
+<tr>
+<td>dolores</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">-36.31</td>
+<td align="right">-57.68</td>
+<td align="right">53.6</td>
+<td align="right">8.99</td>
+</tr>
+<tr>
+<td>warmbad</td>
+<td align="right">0</td>
+<td>DE</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">50.67</td>
+<td align="right">13.08</td>
+<td align="right">48</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>faanui</td>
+<td align="right">56</td>
+<td>PF</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-16.48</td>
+<td align="right">-151.75</td>
+<td align="right">85.1</td>
+<td align="right">6.98</td>
+</tr>
+<tr>
+<td>naze</td>
+<td align="right">40</td>
+<td>NG</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">5.43</td>
+<td align="right">7.07</td>
+<td align="right">75.2</td>
+<td align="right">6.53</td>
+</tr>
+<tr>
+<td>samusu</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>maryanovka</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>mergui</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>vila franca do campo</td>
+<td align="right">75</td>
+<td>PT</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">37.72</td>
+<td align="right">-25.43</td>
+<td align="right">59</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>louisbourg</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>anadyr</td>
+<td align="right">24</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">76</td>
+<td align="right">64.73</td>
+<td align="right">177.51</td>
+<td align="right">-5.01</td>
+<td align="right">22.37</td>
+</tr>
+<tr>
+<td>tupsan</td>
+<td align="right">0</td>
+<td>PH</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">9.2</td>
+<td align="right">124.78</td>
+<td align="right">83.03</td>
+<td align="right">6.53</td>
+</tr>
+<tr>
+<td>sabang</td>
+<td align="right">48</td>
+<td>PH</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">13.72</td>
+<td align="right">123.58</td>
+<td align="right">82.58</td>
+<td align="right">8.99</td>
+</tr>
+<tr>
+<td>nelson bay</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">45</td>
+<td align="right">-32.72</td>
+<td align="right">152.14</td>
+<td align="right">86</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>camacha</td>
+<td align="right">40</td>
+<td>PT</td>
+<td>03/22/19</td>
+<td align="right">67</td>
+<td align="right">33.08</td>
+<td align="right">-16.33</td>
+<td align="right">60.8</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>sibiti</td>
+<td align="right">92</td>
+<td>CG</td>
+<td>03/22/19</td>
+<td align="right">98</td>
+<td align="right">-3.69</td>
+<td align="right">13.35</td>
+<td align="right">72.5</td>
+<td align="right">3.85</td>
+</tr>
+<tr>
+<td>sentyabrskiy</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>sangar</td>
+<td align="right">68</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">60</td>
+<td align="right">63.92</td>
+<td align="right">127.47</td>
+<td align="right">6.98</td>
+<td align="right">13.35</td>
+</tr>
+<tr>
+<td>saskylakh</td>
+<td align="right">36</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">85</td>
+<td align="right">71.97</td>
+<td align="right">114.09</td>
+<td align="right">-2.93</td>
+<td align="right">17.05</td>
+</tr>
+<tr>
+<td>sanming</td>
+<td align="right">92</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">26.24</td>
+<td align="right">117.6</td>
+<td align="right">57.47</td>
+<td align="right">1.72</td>
+</tr>
+<tr>
+<td>ferrol</td>
+<td align="right">0</td>
+<td>ES</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">43.48</td>
+<td align="right">-8.23</td>
+<td align="right">48.99</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>ambilobe</td>
+<td align="right">32</td>
+<td>MG</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">-13.19</td>
+<td align="right">49.05</td>
+<td align="right">72.14</td>
+<td align="right">3.06</td>
+</tr>
+<tr>
+<td>oranjemund</td>
+<td align="right">0</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">-28.55</td>
+<td align="right">16.43</td>
+<td align="right">61.7</td>
+<td align="right">3.06</td>
+</tr>
+<tr>
+<td>penzance</td>
+<td align="right">92</td>
+<td>GB</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">50.12</td>
+<td align="right">-5.53</td>
+<td align="right">51.01</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>diu</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">48</td>
+<td align="right">20.71</td>
+<td align="right">70.98</td>
+<td align="right">74.93</td>
+<td align="right">6.53</td>
+</tr>
+<tr>
+<td>high level</td>
+<td align="right">20</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">56</td>
+<td align="right">58.52</td>
+<td align="right">-117.13</td>
+<td align="right">44.6</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>bambanglipuro</td>
+<td align="right">48</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">95</td>
+<td align="right">-7.95</td>
+<td align="right">110.28</td>
+<td align="right">82.4</td>
+<td align="right">4.97</td>
+</tr>
+<tr>
+<td>ancud</td>
+<td align="right">90</td>
+<td>CL</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-41.87</td>
+<td align="right">-73.83</td>
+<td align="right">55.4</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>carnarvon</td>
+<td align="right">56</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">67</td>
+<td align="right">-30.97</td>
+<td align="right">22.13</td>
+<td align="right">49.46</td>
+<td align="right">3.51</td>
+</tr>
+<tr>
+<td>gamba</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">28.28</td>
+<td align="right">88.52</td>
+<td align="right">10.13</td>
+<td align="right">3.85</td>
+</tr>
+<tr>
+<td>simao</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">41</td>
+<td align="right">22.76</td>
+<td align="right">100.79</td>
+<td align="right">76.1</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>baykit</td>
+<td align="right">76</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">80</td>
+<td align="right">61.68</td>
+<td align="right">96.39</td>
+<td align="right">25.07</td>
+<td align="right">10.67</td>
+</tr>
+<tr>
+<td>levelland</td>
+<td align="right">75</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">33.59</td>
+<td align="right">-102.38</td>
+<td align="right">57.99</td>
+<td align="right">14.99</td>
+</tr>
+<tr>
+<td>victoria</td>
+<td align="right">75</td>
+<td>BN</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">5.28</td>
+<td align="right">115.24</td>
+<td align="right">89.6</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>huilong</td>
+<td align="right">92</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">28.89</td>
+<td align="right">110.18</td>
+<td align="right">44.15</td>
+<td align="right">4.74</td>
+</tr>
+<tr>
+<td>lavrentiya</td>
+<td align="right">92</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">65.58</td>
+<td align="right">-170.99</td>
+<td align="right">15.8</td>
+<td align="right">19.06</td>
+</tr>
+<tr>
+<td>marzuq</td>
+<td align="right">0</td>
+<td>YE</td>
+<td>03/22/19</td>
+<td align="right">72</td>
+<td align="right">14.4</td>
+<td align="right">46.47</td>
+<td align="right">45.05</td>
+<td align="right">2.39</td>
+</tr>
+<tr>
+<td>quchan</td>
+<td align="right">24</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">37.11</td>
+<td align="right">58.51</td>
+<td align="right">20.75</td>
+<td align="right">3.06</td>
+</tr>
+<tr>
+<td>alotau</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>nishihara</td>
+<td align="right">75</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">35.74</td>
+<td align="right">139.53</td>
+<td align="right">48</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>coquimbo</td>
+<td align="right">90</td>
+<td>CL</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">-29.95</td>
+<td align="right">-71.34</td>
+<td align="right">57.2</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>iqaluit</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">63.75</td>
+<td align="right">-68.52</td>
+<td align="right">-20.01</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>barentsburg</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>raton</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">51</td>
+<td align="right">36.9</td>
+<td align="right">-104.44</td>
+<td align="right">39</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>teguldet</td>
+<td align="right">92</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">84</td>
+<td align="right">57.31</td>
+<td align="right">88.17</td>
+<td align="right">29.39</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>finschhafen</td>
+<td align="right">12</td>
+<td>PG</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">-6.6</td>
+<td align="right">147.85</td>
+<td align="right">81.05</td>
+<td align="right">2.84</td>
+</tr>
+<tr>
+<td>touros</td>
+<td align="right">40</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-5.2</td>
+<td align="right">-35.46</td>
+<td align="right">78.8</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>kuala terengganu</td>
+<td align="right">75</td>
+<td>MY</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">5.33</td>
+<td align="right">103.14</td>
+<td align="right">89.6</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>jinchang</td>
+<td align="right">8</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">38.52</td>
+<td align="right">102.19</td>
+<td align="right">32.9</td>
+<td align="right">3.29</td>
+</tr>
+<tr>
+<td>nikolskoye</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">59.7</td>
+<td align="right">30.79</td>
+<td align="right">30</td>
+<td align="right">4.47</td>
+</tr>
+<tr>
+<td>krasnoselkup</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>adre</td>
+<td align="right">0</td>
+<td>TD</td>
+<td>03/22/19</td>
+<td align="right">58</td>
+<td align="right">13.47</td>
+<td align="right">22.2</td>
+<td align="right">63.05</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>flinders</td>
+<td align="right">40</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">-34.58</td>
+<td align="right">150.85</td>
+<td align="right">81</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>diamantino</td>
+<td align="right">32</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">90</td>
+<td align="right">-14.4</td>
+<td align="right">-56.44</td>
+<td align="right">72.59</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>talnakh</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">69.49</td>
+<td align="right">88.39</td>
+<td align="right">-0.86</td>
+<td align="right">3.74</td>
+</tr>
+<tr>
+<td>grand river south east</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>sinnamary</td>
+<td align="right">92</td>
+<td>GF</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">5.38</td>
+<td align="right">-52.96</td>
+<td align="right">79.88</td>
+<td align="right">13.69</td>
+</tr>
+<tr>
+<td>moyamba</td>
+<td align="right">36</td>
+<td>SL</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">8.16</td>
+<td align="right">-12.43</td>
+<td align="right">78.08</td>
+<td align="right">4.18</td>
+</tr>
+<tr>
+<td>tuatapere</td>
+<td align="right">48</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">-46.13</td>
+<td align="right">167.69</td>
+<td align="right">67.28</td>
+<td align="right">4.52</td>
+</tr>
+<tr>
+<td>antigonish</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">45.62</td>
+<td align="right">-61.99</td>
+<td align="right">45</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>tabiauea</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>mount gambier</td>
+<td align="right">75</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">56</td>
+<td align="right">-37.83</td>
+<td align="right">140.78</td>
+<td align="right">71.6</td>
+<td align="right">18.34</td>
+</tr>
+<tr>
+<td>cayenne</td>
+<td align="right">90</td>
+<td>GF</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">4.94</td>
+<td align="right">-52.33</td>
+<td align="right">78.8</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>attawapiskat</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>usogorsk</td>
+<td align="right">80</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">63.43</td>
+<td align="right">48.71</td>
+<td align="right">28.67</td>
+<td align="right">2.51</td>
+</tr>
+<tr>
+<td>kirakira</td>
+<td align="right">8</td>
+<td>SB</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-10.46</td>
+<td align="right">161.92</td>
+<td align="right">85.1</td>
+<td align="right">6.42</td>
+</tr>
+<tr>
+<td>saldanha</td>
+<td align="right">0</td>
+<td>PT</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">41.42</td>
+<td align="right">-6.55</td>
+<td align="right">30.92</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>la ronge</td>
+<td align="right">5</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">80</td>
+<td align="right">55.1</td>
+<td align="right">-105.3</td>
+<td align="right">33.8</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>monrovia</td>
+<td align="right">40</td>
+<td>LR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">6.33</td>
+<td align="right">-10.8</td>
+<td align="right">75.2</td>
+<td align="right">4.29</td>
+</tr>
+<tr>
+<td>constitucion</td>
+<td align="right">20</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">25</td>
+<td align="right">23.99</td>
+<td align="right">-104.67</td>
+<td align="right">62.6</td>
+<td align="right">17.22</td>
+</tr>
+<tr>
+<td>ponta do sol</td>
+<td align="right">92</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-20.63</td>
+<td align="right">-46</td>
+<td align="right">64.58</td>
+<td align="right">10.45</td>
+</tr>
+<tr>
+<td>carbonia</td>
+<td align="right">0</td>
+<td>IT</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">39.17</td>
+<td align="right">8.53</td>
+<td align="right">53.01</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>ayagoz</td>
+<td align="right">8</td>
+<td>KZ</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">47.96</td>
+<td align="right">80.43</td>
+<td align="right">23</td>
+<td align="right">3.29</td>
+</tr>
+<tr>
+<td>brookside</td>
+<td align="right">75</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">40.07</td>
+<td align="right">-80.76</td>
+<td align="right">35.01</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>mogadishu</td>
+<td align="right">0</td>
+<td>SO</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">2.04</td>
+<td align="right">45.34</td>
+<td align="right">81.95</td>
+<td align="right">20.18</td>
+</tr>
+<tr>
+<td>yashkul</td>
+<td align="right">88</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">46.17</td>
+<td align="right">45.34</td>
+<td align="right">36.32</td>
+<td align="right">11.45</td>
+</tr>
+<tr>
+<td>saint-augustin</td>
+<td align="right">0</td>
+<td>FR</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">44.83</td>
+<td align="right">-0.61</td>
+<td align="right">43</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>mys shmidta</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>dunedin</td>
+<td align="right">48</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">-45.87</td>
+<td align="right">170.5</td>
+<td align="right">62.01</td>
+<td align="right">8.99</td>
+</tr>
+<tr>
+<td>zomin</td>
+<td align="right">92</td>
+<td>UZ</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">39.96</td>
+<td align="right">68.4</td>
+<td align="right">51.08</td>
+<td align="right">5.97</td>
+</tr>
+<tr>
+<td>khao yoi</td>
+<td align="right">0</td>
+<td>TH</td>
+<td>03/22/19</td>
+<td align="right">41</td>
+<td align="right">13.24</td>
+<td align="right">99.82</td>
+<td align="right">91.4</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>nicoya</td>
+<td align="right">0</td>
+<td>CR</td>
+<td>03/22/19</td>
+<td align="right">32</td>
+<td align="right">10.15</td>
+<td align="right">-85.45</td>
+<td align="right">82.4</td>
+<td align="right">17.22</td>
+</tr>
+<tr>
+<td>guerrero negro</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">27.97</td>
+<td align="right">-114.04</td>
+<td align="right">59.63</td>
+<td align="right">13.35</td>
+</tr>
+<tr>
+<td>tumannyy</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>zhanaozen</td>
+<td align="right">56</td>
+<td>KZ</td>
+<td>03/22/19</td>
+<td align="right">89</td>
+<td align="right">43.35</td>
+<td align="right">52.85</td>
+<td align="right">35.33</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>linguere</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>klaksvik</td>
+<td align="right">48</td>
+<td>FO</td>
+<td>03/22/19</td>
+<td align="right">47</td>
+<td align="right">62.23</td>
+<td align="right">-6.59</td>
+<td align="right">37.4</td>
+<td align="right">46.08</td>
+</tr>
+<tr>
+<td>christchurch</td>
+<td align="right">0</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">68</td>
+<td align="right">-43.53</td>
+<td align="right">172.64</td>
+<td align="right">73</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>muroto</td>
+<td align="right">75</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">37</td>
+<td align="right">33.37</td>
+<td align="right">134.14</td>
+<td align="right">55.4</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>san quintin</td>
+<td align="right">0</td>
+<td>PH</td>
+<td>03/22/19</td>
+<td align="right">49</td>
+<td align="right">17.54</td>
+<td align="right">120.52</td>
+<td align="right">85.28</td>
+<td align="right">3.74</td>
+</tr>
+<tr>
+<td>warqla</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>truth or consequences</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">17</td>
+<td align="right">33.13</td>
+<td align="right">-107.25</td>
+<td align="right">55.99</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>okandja</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>cherskiy</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">68</td>
+<td align="right">68.75</td>
+<td align="right">161.3</td>
+<td align="right">7.43</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>egvekinot</td>
+<td align="right">64</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">66.32</td>
+<td align="right">-179.17</td>
+<td align="right">3.65</td>
+<td align="right">14.25</td>
+</tr>
+<tr>
+<td>kaeo</td>
+<td align="right">92</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">69</td>
+<td align="right">-35.1</td>
+<td align="right">173.78</td>
+<td align="right">72</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td>saint paul</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">44.95</td>
+<td align="right">-93.1</td>
+<td align="right">36</td>
+<td align="right">3.18</td>
+</tr>
+<tr>
+<td>trat</td>
+<td align="right">20</td>
+<td>TH</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">12.25</td>
+<td align="right">102.51</td>
+<td align="right">96.01</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>beringovskiy</td>
+<td align="right">76</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">90</td>
+<td align="right">63.05</td>
+<td align="right">179.32</td>
+<td align="right">7.43</td>
+<td align="right">29.01</td>
+</tr>
+<tr>
+<td>desaguadero</td>
+<td align="right">0</td>
+<td>PE</td>
+<td>03/22/19</td>
+<td align="right">91</td>
+<td align="right">-16.56</td>
+<td align="right">-69.04</td>
+<td align="right">38.3</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>arman</td>
+<td align="right">88</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">59.7</td>
+<td align="right">150.17</td>
+<td align="right">23.9</td>
+<td align="right">11.9</td>
+</tr>
+<tr>
+<td>palana</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">61</td>
+<td align="right">59.08</td>
+<td align="right">159.95</td>
+<td align="right">28.85</td>
+<td align="right">12.46</td>
+</tr>
+<tr>
+<td>abu samrah</td>
+<td align="right">36</td>
+<td>SY</td>
+<td>03/22/19</td>
+<td align="right">89</td>
+<td align="right">35.3</td>
+<td align="right">37.18</td>
+<td align="right">48.92</td>
+<td align="right">4.74</td>
+</tr>
+<tr>
+<td>makakilo city</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">53</td>
+<td align="right">21.35</td>
+<td align="right">-158.09</td>
+<td align="right">78.8</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>buariki</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>buala</td>
+<td align="right">36</td>
+<td>SB</td>
+<td>03/22/19</td>
+<td align="right">91</td>
+<td align="right">-8.15</td>
+<td align="right">159.59</td>
+<td align="right">84.29</td>
+<td align="right">3.85</td>
+</tr>
+<tr>
+<td>tura</td>
+<td align="right">36</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">25.52</td>
+<td align="right">90.21</td>
+<td align="right">69.08</td>
+<td align="right">4.29</td>
+</tr>
+<tr>
+<td>kashi</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>margate</td>
+<td align="right">75</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">-43.03</td>
+<td align="right">147.26</td>
+<td align="right">68</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>praya</td>
+<td align="right">75</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">-8.71</td>
+<td align="right">116.27</td>
+<td align="right">89.6</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>verkh-usugli</td>
+<td align="right">20</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">50</td>
+<td align="right">52.7</td>
+<td align="right">115.17</td>
+<td align="right">23.54</td>
+<td align="right">5.41</td>
+</tr>
+<tr>
+<td>port lincoln</td>
+<td align="right">88</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">-34.72</td>
+<td align="right">135.86</td>
+<td align="right">71.51</td>
+<td align="right">8.21</td>
+</tr>
+<tr>
+<td>tiksi</td>
+<td align="right">12</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">71.64</td>
+<td align="right">128.87</td>
+<td align="right">12.74</td>
+<td align="right">4.41</td>
+</tr>
+<tr>
+<td>papara</td>
+<td align="right">75</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-3.98</td>
+<td align="right">-38.73</td>
+<td align="right">81</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>murshidabad</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">51</td>
+<td align="right">24.17</td>
+<td align="right">88.27</td>
+<td align="right">80.78</td>
+<td align="right">4.63</td>
+</tr>
+<tr>
+<td>lodja</td>
+<td align="right">56</td>
+<td>CD</td>
+<td>03/22/19</td>
+<td align="right">98</td>
+<td align="right">-3.52</td>
+<td align="right">23.6</td>
+<td align="right">69.62</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>sao filipe</td>
+<td align="right">44</td>
+<td>CV</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">14.9</td>
+<td align="right">-24.5</td>
+<td align="right">69.35</td>
+<td align="right">14.14</td>
+</tr>
+<tr>
+<td>elizabeth city</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">52</td>
+<td align="right">36.3</td>
+<td align="right">-76.22</td>
+<td align="right">48.2</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>clyde river</td>
+<td align="right">75</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">70.47</td>
+<td align="right">-68.59</td>
+<td align="right">-18.41</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>taksimo</td>
+<td align="right">64</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">56.36</td>
+<td align="right">114.84</td>
+<td align="right">16.7</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>slantsy</td>
+<td align="right">20</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">59.12</td>
+<td align="right">28.09</td>
+<td align="right">19.31</td>
+<td align="right">4.63</td>
+</tr>
+<tr>
+<td>cockburn town</td>
+<td align="right">32</td>
+<td>TC</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">21.46</td>
+<td align="right">-71.14</td>
+<td align="right">78.26</td>
+<td align="right">6.08</td>
+</tr>
+<tr>
+<td>buenos aires</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">68</td>
+<td align="right">-34.61</td>
+<td align="right">-58.44</td>
+<td align="right">66.2</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>dudinka</td>
+<td align="right">32</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">69.41</td>
+<td align="right">86.18</td>
+<td align="right">-0.68</td>
+<td align="right">4.63</td>
+</tr>
+<tr>
+<td>provideniya</td>
+<td align="right">92</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">64.42</td>
+<td align="right">-173.23</td>
+<td align="right">15.62</td>
+<td align="right">13.02</td>
+</tr>
+<tr>
+<td>longyearbyen</td>
+<td align="right">75</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">78.22</td>
+<td align="right">15.63</td>
+<td align="right">21.2</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>sao jose da coroa grande</td>
+<td align="right">8</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-8.9</td>
+<td align="right">-35.15</td>
+<td align="right">77.9</td>
+<td align="right">7.54</td>
+</tr>
+<tr>
+<td>virginia beach</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">49</td>
+<td align="right">36.85</td>
+<td align="right">-75.98</td>
+<td align="right">46.99</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>vondrozo</td>
+<td align="right">92</td>
+<td>MG</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">-22.82</td>
+<td align="right">47.32</td>
+<td align="right">69.8</td>
+<td align="right">5.19</td>
+</tr>
+<tr>
+<td>karaul</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>hualmay</td>
+<td align="right">0</td>
+<td>PE</td>
+<td>03/22/19</td>
+<td align="right">91</td>
+<td align="right">-11.1</td>
+<td align="right">-77.61</td>
+<td align="right">67.28</td>
+<td align="right">4.29</td>
+</tr>
+<tr>
+<td>santa rosalia</td>
+<td align="right">0</td>
+<td>IT</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">38.07</td>
+<td align="right">13.27</td>
+<td align="right">55.99</td>
+<td align="right">1.12</td>
+</tr>
+<tr>
+<td>caravelas</td>
+<td align="right">100</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-17.73</td>
+<td align="right">-39.27</td>
+<td align="right">79.43</td>
+<td align="right">20.29</td>
+</tr>
+<tr>
+<td>aklavik</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">68.22</td>
+<td align="right">-135.01</td>
+<td align="right">15.8</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>kralendijk</td>
+<td align="right">68</td>
+<td>BQ</td>
+<td>03/22/19</td>
+<td align="right">78</td>
+<td align="right">12.15</td>
+<td align="right">-68.27</td>
+<td align="right">78.8</td>
+<td align="right">14.99</td>
+</tr>
+<tr>
+<td>solnechnyy</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">62</td>
+<td align="right">50.72</td>
+<td align="right">136.64</td>
+<td align="right">18.95</td>
+<td align="right">3.74</td>
+</tr>
+<tr>
+<td>khandyga</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">51</td>
+<td align="right">62.65</td>
+<td align="right">135.58</td>
+<td align="right">4.55</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>hameenlinna</td>
+<td align="right">90</td>
+<td>FI</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">61</td>
+<td align="right">24.46</td>
+<td align="right">39</td>
+<td align="right">16.11</td>
+</tr>
+<tr>
+<td>hofn</td>
+<td align="right">44</td>
+<td>IS</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">64.25</td>
+<td align="right">-15.21</td>
+<td align="right">36.68</td>
+<td align="right">25.43</td>
+</tr>
+<tr>
+<td>bam</td>
+<td align="right">12</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">29.11</td>
+<td align="right">58.36</td>
+<td align="right">41.18</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>mbini</td>
+<td align="right">88</td>
+<td>GQ</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">1.58</td>
+<td align="right">9.62</td>
+<td align="right">74.57</td>
+<td align="right">4.41</td>
+</tr>
+<tr>
+<td>banda aceh</td>
+<td align="right">12</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">5.56</td>
+<td align="right">95.32</td>
+<td align="right">85.91</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>sumbe</td>
+<td align="right">48</td>
+<td>AO</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-11.2</td>
+<td align="right">13.84</td>
+<td align="right">79.79</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>linfen</td>
+<td align="right">20</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">49</td>
+<td align="right">36.09</td>
+<td align="right">111.52</td>
+<td align="right">45.77</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>balsas</td>
+<td align="right">92</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">95</td>
+<td align="right">-7.53</td>
+<td align="right">-46.04</td>
+<td align="right">72.5</td>
+<td align="right">3.18</td>
+</tr>
+<tr>
+<td>dapaong</td>
+<td align="right">48</td>
+<td>TG</td>
+<td>03/22/19</td>
+<td align="right">69</td>
+<td align="right">10.86</td>
+<td align="right">0.2</td>
+<td align="right">76.55</td>
+<td align="right">6.64</td>
+</tr>
+<tr>
+<td>kapuskasing</td>
+<td align="right">5</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">49.42</td>
+<td align="right">-82.43</td>
+<td align="right">3.2</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>axim</td>
+<td align="right">24</td>
+<td>GH</td>
+<td>03/22/19</td>
+<td align="right">97</td>
+<td align="right">4.87</td>
+<td align="right">-2.24</td>
+<td align="right">83.21</td>
+<td align="right">9.66</td>
+</tr>
+<tr>
+<td>sabha</td>
+<td align="right">8</td>
+<td>LY</td>
+<td>03/22/19</td>
+<td align="right">45</td>
+<td align="right">27.03</td>
+<td align="right">14.43</td>
+<td align="right">51.35</td>
+<td align="right">6.64</td>
+</tr>
+<tr>
+<td>akhisar</td>
+<td align="right">0</td>
+<td>TR</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">38.92</td>
+<td align="right">27.84</td>
+<td align="right">32</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>pakaur</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">58</td>
+<td align="right">24.64</td>
+<td align="right">87.92</td>
+<td align="right">79.7</td>
+<td align="right">4.18</td>
+</tr>
+<tr>
+<td>strelka</td>
+<td align="right">44</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">85</td>
+<td align="right">58.08</td>
+<td align="right">93.03</td>
+<td align="right">26.42</td>
+<td align="right">3.29</td>
+</tr>
+<tr>
+<td>serebryansk</td>
+<td align="right">0</td>
+<td>KZ</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">49.68</td>
+<td align="right">83.3</td>
+<td align="right">29.39</td>
+<td align="right">2.28</td>
+</tr>
+<tr>
+<td>jumla</td>
+<td align="right">0</td>
+<td>NP</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">29.28</td>
+<td align="right">82.18</td>
+<td align="right">29.75</td>
+<td align="right">1.95</td>
+</tr>
+<tr>
+<td>vestmannaeyjar</td>
+<td align="right">0</td>
+<td>IS</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">63.44</td>
+<td align="right">-20.27</td>
+<td align="right">36.95</td>
+<td align="right">30.91</td>
+</tr>
+<tr>
+<td>valle de allende</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">16</td>
+<td align="right">26.94</td>
+<td align="right">-105.39</td>
+<td align="right">60.08</td>
+<td align="right">11.79</td>
+</tr>
+<tr>
+<td>qasigiannguit</td>
+<td align="right">0</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">57</td>
+<td align="right">68.82</td>
+<td align="right">-51.19</td>
+<td align="right">-11.21</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>fallon</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">46.84</td>
+<td align="right">-105.12</td>
+<td align="right">37.4</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>bani</td>
+<td align="right">0</td>
+<td>PH</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">15.89</td>
+<td align="right">120.27</td>
+<td align="right">85.55</td>
+<td align="right">2.28</td>
+</tr>
+<tr>
+<td>mpwapwa</td>
+<td align="right">20</td>
+<td>TZ</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-6.35</td>
+<td align="right">36.49</td>
+<td align="right">59.81</td>
+<td align="right">2.39</td>
+</tr>
+<tr>
+<td>hudson</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">40.07</td>
+<td align="right">-104.64</td>
+<td align="right">42.8</td>
+<td align="right">17.72</td>
+</tr>
+<tr>
+<td>maldonado</td>
+<td align="right">20</td>
+<td>UY</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">-34.91</td>
+<td align="right">-54.96</td>
+<td align="right">59</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>bengkulu</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>kloulklubed</td>
+<td align="right">75</td>
+<td>PW</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">7.04</td>
+<td align="right">134.26</td>
+<td align="right">86</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>presidencia roque saenz pena</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">-26.79</td>
+<td align="right">-60.44</td>
+<td align="right">64.31</td>
+<td align="right">7.99</td>
+</tr>
+<tr>
+<td>rawannawi</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>merauke</td>
+<td align="right">12</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">91</td>
+<td align="right">-8.49</td>
+<td align="right">140.4</td>
+<td align="right">86.09</td>
+<td align="right">9.78</td>
+</tr>
+<tr>
+<td>kedrovyy</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">47</td>
+<td align="right">56.17</td>
+<td align="right">91.82</td>
+<td align="right">37.4</td>
+<td align="right">4.47</td>
+</tr>
+<tr>
+<td>ilulissat</td>
+<td align="right">0</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">57</td>
+<td align="right">69.22</td>
+<td align="right">-51.1</td>
+<td align="right">-11.21</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>constanta</td>
+<td align="right">0</td>
+<td>RO</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">44.18</td>
+<td align="right">28.65</td>
+<td align="right">43</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>sekoma</td>
+<td align="right">0</td>
+<td>BW</td>
+<td>03/22/19</td>
+<td align="right">35</td>
+<td align="right">-24.51</td>
+<td align="right">23.93</td>
+<td align="right">64.85</td>
+<td align="right">14.25</td>
+</tr>
+<tr>
+<td>baykalsk</td>
+<td align="right">8</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">51.52</td>
+<td align="right">104.15</td>
+<td align="right">35.6</td>
+<td align="right">5.75</td>
+</tr>
+<tr>
+<td>nieuw nickerie</td>
+<td align="right">100</td>
+<td>SR</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">5.94</td>
+<td align="right">-56.99</td>
+<td align="right">78.08</td>
+<td align="right">12.8</td>
+</tr>
+<tr>
+<td>myitkyina</td>
+<td align="right">0</td>
+<td>MM</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">25.38</td>
+<td align="right">97.4</td>
+<td align="right">70.97</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>sobolevo</td>
+<td align="right">88</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">54.43</td>
+<td align="right">31.9</td>
+<td align="right">32.63</td>
+<td align="right">19.95</td>
+</tr>
+<tr>
+<td>athieme</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>iquitos</td>
+<td align="right">75</td>
+<td>PE</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-3.75</td>
+<td align="right">-73.25</td>
+<td align="right">75.2</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>narsaq</td>
+<td align="right">44</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">60.91</td>
+<td align="right">-46.05</td>
+<td align="right">26.6</td>
+<td align="right">16.11</td>
+</tr>
+<tr>
+<td>toguchin</td>
+<td align="right">68</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">55.24</td>
+<td align="right">84.4</td>
+<td align="right">22.55</td>
+<td align="right">5.97</td>
+</tr>
+<tr>
+<td>isiolo</td>
+<td align="right">20</td>
+<td>KE</td>
+<td>03/22/19</td>
+<td align="right">77</td>
+<td align="right">0.35</td>
+<td align="right">37.58</td>
+<td align="right">66.38</td>
+<td align="right">3.85</td>
+</tr>
+<tr>
+<td>brae</td>
+<td align="right">88</td>
+<td>GB</td>
+<td>03/22/19</td>
+<td align="right">80</td>
+<td align="right">60.4</td>
+<td align="right">-1.35</td>
+<td align="right">41</td>
+<td align="right">34.45</td>
+</tr>
+<tr>
+<td>udachnyy</td>
+<td align="right">44</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">56</td>
+<td align="right">66.42</td>
+<td align="right">112.4</td>
+<td align="right">1.58</td>
+<td align="right">7.99</td>
+</tr>
+<tr>
+<td>khatanga</td>
+<td align="right">12</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">71.98</td>
+<td align="right">102.47</td>
+<td align="right">-12.56</td>
+<td align="right">9.66</td>
+</tr>
+<tr>
+<td>kendari</td>
+<td align="right">20</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">-3.99</td>
+<td align="right">122.52</td>
+<td align="right">85.64</td>
+<td align="right">3.74</td>
+</tr>
+<tr>
+<td>balakhta</td>
+<td align="right">24</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">72</td>
+<td align="right">55.38</td>
+<td align="right">91.62</td>
+<td align="right">32.63</td>
+<td align="right">3.29</td>
+</tr>
+<tr>
+<td>balgazyn</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">51</td>
+<td align="right">95.2</td>
+<td align="right">29.03</td>
+<td align="right">3.51</td>
+</tr>
+<tr>
+<td>port blair</td>
+<td align="right">20</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">55</td>
+<td align="right">11.67</td>
+<td align="right">92.75</td>
+<td align="right">87.8</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>hovd</td>
+<td align="right">20</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">63.83</td>
+<td align="right">10.7</td>
+<td align="right">41</td>
+<td align="right">31.09</td>
+</tr>
+<tr>
+<td>avera</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">43</td>
+<td align="right">33.19</td>
+<td align="right">-82.53</td>
+<td align="right">60.8</td>
+<td align="right">8.43</td>
+</tr>
+<tr>
+<td>ulladulla</td>
+<td align="right">40</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">-35.36</td>
+<td align="right">150.48</td>
+<td align="right">78.8</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>mananjary</td>
+<td align="right">0</td>
+<td>MG</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">-19.16</td>
+<td align="right">46.8</td>
+<td align="right">60.44</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>pandan</td>
+<td align="right">8</td>
+<td>PH</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">11.72</td>
+<td align="right">122.09</td>
+<td align="right">80.96</td>
+<td align="right">14.25</td>
+</tr>
+<tr>
+<td>manoel urbano</td>
+<td align="right">76</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-8.84</td>
+<td align="right">-69.26</td>
+<td align="right">74.3</td>
+<td align="right">1.83</td>
+</tr>
+<tr>
+<td>tazovskiy</td>
+<td align="right">80</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">67.47</td>
+<td align="right">78.7</td>
+<td align="right">21.92</td>
+<td align="right">9.55</td>
+</tr>
+<tr>
+<td>wampusirpi</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>namatanai</td>
+<td align="right">24</td>
+<td>PG</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-3.66</td>
+<td align="right">152.44</td>
+<td align="right">83.03</td>
+<td align="right">0.6</td>
+</tr>
+<tr>
+<td>saint anthony</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">43.97</td>
+<td align="right">-111.68</td>
+<td align="right">39.2</td>
+<td align="right">3.85</td>
+</tr>
+<tr>
+<td>vao</td>
+<td align="right">48</td>
+<td>EE</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">59.1</td>
+<td align="right">26.19</td>
+<td align="right">25.61</td>
+<td align="right">8.32</td>
+</tr>
+<tr>
+<td>labutta</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>ossora</td>
+<td align="right">80</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">59.24</td>
+<td align="right">163.07</td>
+<td align="right">26.15</td>
+<td align="right">15.48</td>
+</tr>
+<tr>
+<td>klyuchi</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">84</td>
+<td align="right">52.25</td>
+<td align="right">79.17</td>
+<td align="right">28.67</td>
+<td align="right">3.74</td>
+</tr>
+<tr>
+<td>awjilah</td>
+<td align="right">0</td>
+<td>LY</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">29.14</td>
+<td align="right">21.3</td>
+<td align="right">63.05</td>
+<td align="right">7.65</td>
+</tr>
+<tr>
+<td>soure</td>
+<td align="right">0</td>
+<td>PT</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">40.06</td>
+<td align="right">-8.63</td>
+<td align="right">57</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>tubuala</td>
+<td align="right">20</td>
+<td>PA</td>
+<td>03/22/19</td>
+<td align="right">69</td>
+<td align="right">9.52</td>
+<td align="right">-79.03</td>
+<td align="right">82</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>sisimiut</td>
+<td align="right">0</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">61</td>
+<td align="right">66.94</td>
+<td align="right">-53.67</td>
+<td align="right">-34.88</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>punta alta</td>
+<td align="right">0</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">72</td>
+<td align="right">-27.46</td>
+<td align="right">-55.82</td>
+<td align="right">68</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>byron bay</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">-28.65</td>
+<td align="right">153.62</td>
+<td align="right">93.99</td>
+<td align="right">16.11</td>
+</tr>
+<tr>
+<td>mairana</td>
+<td align="right">88</td>
+<td>BO</td>
+<td>03/22/19</td>
+<td align="right">95</td>
+<td align="right">-18.12</td>
+<td align="right">-63.96</td>
+<td align="right">58.28</td>
+<td align="right">2.39</td>
+</tr>
+<tr>
+<td>zmievka</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>shahrud</td>
+<td align="right">8</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">67</td>
+<td align="right">36.42</td>
+<td align="right">54.97</td>
+<td align="right">13.73</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>kieta</td>
+<td align="right">56</td>
+<td>PG</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-6.22</td>
+<td align="right">155.63</td>
+<td align="right">83.21</td>
+<td align="right">3.96</td>
+</tr>
+<tr>
+<td>moerai</td>
+<td align="right">88</td>
+<td>PF</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">-22.43</td>
+<td align="right">-151.33</td>
+<td align="right">79.7</td>
+<td align="right">13.02</td>
+</tr>
+<tr>
+<td>sabaudia</td>
+<td align="right">0</td>
+<td>IT</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">41.3</td>
+<td align="right">13.03</td>
+<td align="right">55</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>bronnoysund</td>
+<td align="right">88</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">80</td>
+<td align="right">65.46</td>
+<td align="right">12.2</td>
+<td align="right">39.2</td>
+<td align="right">33.33</td>
+</tr>
+<tr>
+<td>svarstad</td>
+<td align="right">8</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">59.4</td>
+<td align="right">9.97</td>
+<td align="right">43</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>bondo</td>
+<td align="right">80</td>
+<td>CD</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">3.81</td>
+<td align="right">23.69</td>
+<td align="right">76.28</td>
+<td align="right">2.39</td>
+</tr>
+<tr>
+<td>natal</td>
+<td align="right">20</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-5.81</td>
+<td align="right">-35.21</td>
+<td align="right">78.8</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>cairns</td>
+<td align="right">75</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">-16.92</td>
+<td align="right">145.77</td>
+<td align="right">86</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>hami</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">53</td>
+<td align="right">42.84</td>
+<td align="right">93.51</td>
+<td align="right">43.7</td>
+<td align="right">5.19</td>
+</tr>
+<tr>
+<td>ahumada</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>berlevag</td>
+<td align="right">68</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">70.86</td>
+<td align="right">29.09</td>
+<td align="right">31.37</td>
+<td align="right">21.74</td>
+</tr>
+<tr>
+<td>eldoret</td>
+<td align="right">0</td>
+<td>KE</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">0.52</td>
+<td align="right">35.27</td>
+<td align="right">48.92</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>havelock</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">37</td>
+<td align="right">34.88</td>
+<td align="right">-76.9</td>
+<td align="right">55.4</td>
+<td align="right">25.28</td>
+</tr>
+<tr>
+<td>eskil</td>
+<td align="right">0</td>
+<td>TR</td>
+<td>03/22/19</td>
+<td align="right">78</td>
+<td align="right">38.4</td>
+<td align="right">33.41</td>
+<td align="right">32.72</td>
+<td align="right">2.28</td>
+</tr>
+<tr>
+<td>vila</td>
+<td align="right">0</td>
+<td>IT</td>
+<td>03/22/19</td>
+<td align="right">69</td>
+<td align="right">45.18</td>
+<td align="right">8.4</td>
+<td align="right">51.01</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>stephenville</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">42</td>
+<td align="right">32.22</td>
+<td align="right">-98.2</td>
+<td align="right">68</td>
+<td align="right">16.11</td>
+</tr>
+<tr>
+<td>kirundo</td>
+<td align="right">8</td>
+<td>BI</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">-2.59</td>
+<td align="right">30.09</td>
+<td align="right">58.64</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>aripuana</td>
+<td align="right">20</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-9.17</td>
+<td align="right">-60.63</td>
+<td align="right">77</td>
+<td align="right">2.06</td>
+</tr>
+<tr>
+<td>saint-denis</td>
+<td align="right">90</td>
+<td>FR</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">48.94</td>
+<td align="right">2.36</td>
+<td align="right">44.01</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>ise</td>
+<td align="right">75</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">45</td>
+<td align="right">34.5</td>
+<td align="right">136.72</td>
+<td align="right">54</td>
+<td align="right">17.22</td>
+</tr>
+<tr>
+<td>maragheh</td>
+<td align="right">40</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">69</td>
+<td align="right">37.39</td>
+<td align="right">46.24</td>
+<td align="right">37.4</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>haines junction</td>
+<td align="right">24</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">60</td>
+<td align="right">60.75</td>
+<td align="right">-137.51</td>
+<td align="right">40.37</td>
+<td align="right">2.06</td>
+</tr>
+<tr>
+<td>lewistown</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">40.39</td>
+<td align="right">-90.15</td>
+<td align="right">39.2</td>
+<td align="right">6.87</td>
+</tr>
+<tr>
+<td>visnes</td>
+<td align="right">76</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">59.36</td>
+<td align="right">5.22</td>
+<td align="right">43</td>
+<td align="right">25.28</td>
+</tr>
+<tr>
+<td>palanga</td>
+<td align="right">0</td>
+<td>RO</td>
+<td>03/22/19</td>
+<td align="right">24</td>
+<td align="right">44.45</td>
+<td align="right">25.08</td>
+<td align="right">48</td>
+<td align="right">2.17</td>
+</tr>
+<tr>
+<td>umm kaddadah</td>
+<td align="right">0</td>
+<td>SD</td>
+<td>03/22/19</td>
+<td align="right">23</td>
+<td align="right">13.6</td>
+<td align="right">26.69</td>
+<td align="right">65.12</td>
+<td align="right">5.3</td>
+</tr>
+<tr>
+<td>ostrovnoy</td>
+<td align="right">64</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">68.05</td>
+<td align="right">39.51</td>
+<td align="right">20.66</td>
+<td align="right">19.06</td>
+</tr>
+<tr>
+<td>masvingo</td>
+<td align="right">48</td>
+<td>ZW</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">-20.08</td>
+<td align="right">30.83</td>
+<td align="right">63.77</td>
+<td align="right">11.23</td>
+</tr>
+<tr>
+<td>soweto</td>
+<td align="right">12</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">-26.22</td>
+<td align="right">27.89</td>
+<td align="right">61</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>fremont</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">37.55</td>
+<td align="right">-121.99</td>
+<td align="right">55.99</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>ercis</td>
+<td align="right">20</td>
+<td>TR</td>
+<td>03/22/19</td>
+<td align="right">85</td>
+<td align="right">39.03</td>
+<td align="right">43.36</td>
+<td align="right">28</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>vila velha</td>
+<td align="right">75</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">-3.71</td>
+<td align="right">-38.6</td>
+<td align="right">81</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>aykhal</td>
+<td align="right">56</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">65.95</td>
+<td align="right">111.51</td>
+<td align="right">1.49</td>
+<td align="right">12.8</td>
+</tr>
+<tr>
+<td>belyy yar</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">21</td>
+<td align="right">53.6</td>
+<td align="right">91.39</td>
+<td align="right">41</td>
+<td align="right">9.55</td>
+</tr>
+<tr>
+<td>port macquarie</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">58</td>
+<td align="right">-31.43</td>
+<td align="right">152.91</td>
+<td align="right">89.01</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>pervomayskiy</td>
+<td align="right">92</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">53.24</td>
+<td align="right">40.29</td>
+<td align="right">31.82</td>
+<td align="right">15.14</td>
+</tr>
+<tr>
+<td>satrikh</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">40</td>
+<td align="right">26.86</td>
+<td align="right">81.19</td>
+<td align="right">73.4</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>ormara</td>
+<td align="right">68</td>
+<td>PK</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">25.21</td>
+<td align="right">64.64</td>
+<td align="right">71.6</td>
+<td align="right">8.77</td>
+</tr>
+<tr>
+<td>manama</td>
+<td align="right">40</td>
+<td>AE</td>
+<td>03/22/19</td>
+<td align="right">47</td>
+<td align="right">25.33</td>
+<td align="right">56.02</td>
+<td align="right">78.01</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>northam</td>
+<td align="right">92</td>
+<td>GB</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">51.04</td>
+<td align="right">-4.21</td>
+<td align="right">48.99</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>gryazi</td>
+<td align="right">92</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">95</td>
+<td align="right">52.5</td>
+<td align="right">39.96</td>
+<td align="right">32.18</td>
+<td align="right">12.91</td>
+</tr>
+<tr>
+<td>ixtapa</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">89</td>
+<td align="right">20.71</td>
+<td align="right">-105.21</td>
+<td align="right">73.99</td>
+<td align="right">1.83</td>
+</tr>
+<tr>
+<td>puerto colombia</td>
+<td align="right">75</td>
+<td>CO</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">10.99</td>
+<td align="right">-74.96</td>
+<td align="right">78.8</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>batemans bay</td>
+<td align="right">56</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">61</td>
+<td align="right">-35.71</td>
+<td align="right">150.18</td>
+<td align="right">77</td>
+<td align="right">1.99</td>
+</tr>
+<tr>
+<td>usinsk</td>
+<td align="right">92</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">66</td>
+<td align="right">57.56</td>
+<td align="right">23.72</td>
+<td align="right">9.44</td>
+</tr>
+<tr>
+<td>duxbury</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">42.04</td>
+<td align="right">-70.67</td>
+<td align="right">41</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>torrington</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">42.06</td>
+<td align="right">-104.18</td>
+<td align="right">44.6</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>laguna</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">29</td>
+<td align="right">27.52</td>
+<td align="right">-110.01</td>
+<td align="right">69.17</td>
+<td align="right">4.63</td>
+</tr>
+<tr>
+<td>jerico</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">37</td>
+<td align="right">37.17</td>
+<td align="right">-92.67</td>
+<td align="right">54</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>mayskiy</td>
+<td align="right">92</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">43.63</td>
+<td align="right">44.06</td>
+<td align="right">39.2</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>calvinia</td>
+<td align="right">76</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">-31.47</td>
+<td align="right">19.78</td>
+<td align="right">51.62</td>
+<td align="right">3.74</td>
+</tr>
+<tr>
+<td>kushiro</td>
+<td align="right">75</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">54</td>
+<td align="right">43.11</td>
+<td align="right">144.15</td>
+<td align="right">30.2</td>
+<td align="right">16.11</td>
+</tr>
+<tr>
+<td>karratha</td>
+<td align="right">92</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">-20.74</td>
+<td align="right">116.85</td>
+<td align="right">86.72</td>
+<td align="right">31.59</td>
+</tr>
+<tr>
+<td>emba</td>
+<td align="right">20</td>
+<td>CY</td>
+<td>03/22/19</td>
+<td align="right">58</td>
+<td align="right">34.81</td>
+<td align="right">32.42</td>
+<td align="right">55.4</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>charleston</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">51</td>
+<td align="right">38.35</td>
+<td align="right">-81.63</td>
+<td align="right">43</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>vangaindrano</td>
+<td align="right">92</td>
+<td>MG</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-23.35</td>
+<td align="right">47.6</td>
+<td align="right">67.82</td>
+<td align="right">3.18</td>
+</tr>
+<tr>
+<td>bud</td>
+<td align="right">80</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">62.91</td>
+<td align="right">6.91</td>
+<td align="right">41</td>
+<td align="right">32.21</td>
+</tr>
+<tr>
+<td>pontes e lacerda</td>
+<td align="right">0</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">-15.23</td>
+<td align="right">-59.33</td>
+<td align="right">74.48</td>
+<td align="right">4.41</td>
+</tr>
+<tr>
+<td>salina</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">53</td>
+<td align="right">36.29</td>
+<td align="right">-95.15</td>
+<td align="right">57.99</td>
+<td align="right">5.82</td>
+</tr>
+<tr>
+<td>tlahualilo</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>da lat</td>
+<td align="right">8</td>
+<td>VN</td>
+<td>03/22/19</td>
+<td align="right">68</td>
+<td align="right">11.95</td>
+<td align="right">108.44</td>
+<td align="right">77.72</td>
+<td align="right">2.84</td>
+</tr>
+<tr>
+<td>mao</td>
+<td align="right">20</td>
+<td>DO</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">19.55</td>
+<td align="right">-71.08</td>
+<td align="right">77</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>kegayli</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>hun</td>
+<td align="right">75</td>
+<td>BE</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">50.34</td>
+<td align="right">4.87</td>
+<td align="right">46.4</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>troitsko-pechorsk</td>
+<td align="right">80</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">62.71</td>
+<td align="right">56.19</td>
+<td align="right">23.45</td>
+<td align="right">3.85</td>
+</tr>
+<tr>
+<td>mbala</td>
+<td align="right">48</td>
+<td>ZM</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">-8.85</td>
+<td align="right">31.37</td>
+<td align="right">60.17</td>
+<td align="right">4.18</td>
+</tr>
+<tr>
+<td>tari</td>
+<td align="right">0</td>
+<td>NG</td>
+<td>03/22/19</td>
+<td align="right">23</td>
+<td align="right">12.41</td>
+<td align="right">4.49</td>
+<td align="right">78.17</td>
+<td align="right">11.45</td>
+</tr>
+<tr>
+<td>dandong</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">44</td>
+<td align="right">40.12</td>
+<td align="right">124.37</td>
+<td align="right">40.1</td>
+<td align="right">10.78</td>
+</tr>
+<tr>
+<td>hamilton</td>
+<td align="right">20</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">43.26</td>
+<td align="right">-79.87</td>
+<td align="right">30</td>
+<td align="right">17.22</td>
+</tr>
+<tr>
+<td>americus</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">46</td>
+<td align="right">32.07</td>
+<td align="right">-84.23</td>
+<td align="right">55</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>norman wells</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">65.28</td>
+<td align="right">-126.83</td>
+<td align="right">23</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>novyy urengoy</td>
+<td align="right">76</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">66.08</td>
+<td align="right">76.63</td>
+<td align="right">21.02</td>
+<td align="right">7.43</td>
+</tr>
+<tr>
+<td>gejiu</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">49</td>
+<td align="right">23.36</td>
+<td align="right">103.16</td>
+<td align="right">80.01</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>rawson</td>
+<td align="right">56</td>
+<td>AR</td>
+<td>03/22/19</td>
+<td align="right">53</td>
+<td align="right">-43.3</td>
+<td align="right">-65.11</td>
+<td align="right">61.52</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td>kotaparh</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">19.15</td>
+<td align="right">82.35</td>
+<td align="right">78.17</td>
+<td align="right">4.41</td>
+</tr>
+<tr>
+<td>angicos</td>
+<td align="right">68</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">95</td>
+<td align="right">-5.67</td>
+<td align="right">-36.6</td>
+<td align="right">73.4</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>nizwa</td>
+<td align="right">0</td>
+<td>OM</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">22.93</td>
+<td align="right">57.53</td>
+<td align="right">58.46</td>
+<td align="right">3.51</td>
+</tr>
+<tr>
+<td>atambua</td>
+<td align="right">0</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">90</td>
+<td align="right">-9.11</td>
+<td align="right">124.89</td>
+<td align="right">84.83</td>
+<td align="right">11.68</td>
+</tr>
+<tr>
+<td>ostersund</td>
+<td align="right">32</td>
+<td>SE</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">63.18</td>
+<td align="right">14.64</td>
+<td align="right">39.2</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>inhambane</td>
+<td align="right">8</td>
+<td>MZ</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-23.87</td>
+<td align="right">35.38</td>
+<td align="right">74.57</td>
+<td align="right">8.77</td>
+</tr>
+<tr>
+<td>pangnirtung</td>
+<td align="right">32</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">54</td>
+<td align="right">66.15</td>
+<td align="right">-65.72</td>
+<td align="right">-19.4</td>
+<td align="right">5.75</td>
+</tr>
+<tr>
+<td>ippy</td>
+<td align="right">0</td>
+<td>CF</td>
+<td>03/22/19</td>
+<td align="right">59</td>
+<td align="right">6.26</td>
+<td align="right">21.2</td>
+<td align="right">78.89</td>
+<td align="right">9.44</td>
+</tr>
+<tr>
+<td>inverness</td>
+<td align="right">40</td>
+<td>GB</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">57.48</td>
+<td align="right">-4.23</td>
+<td align="right">39.2</td>
+<td align="right">20.8</td>
+</tr>
+<tr>
+<td>lolua</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>cabinda</td>
+<td align="right">80</td>
+<td>AO</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-5.56</td>
+<td align="right">12.19</td>
+<td align="right">77.18</td>
+<td align="right">4.85</td>
+</tr>
+<tr>
+<td>nirmali</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">23</td>
+<td align="right">26.31</td>
+<td align="right">86.57</td>
+<td align="right">79.16</td>
+<td align="right">4.18</td>
+</tr>
+<tr>
+<td>lagos</td>
+<td align="right">20</td>
+<td>NG</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">6.46</td>
+<td align="right">3.39</td>
+<td align="right">78.8</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>biak</td>
+<td align="right">44</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">-0.91</td>
+<td align="right">122.88</td>
+<td align="right">85.55</td>
+<td align="right">2.62</td>
+</tr>
+<tr>
+<td>ahipara</td>
+<td align="right">68</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">73</td>
+<td align="right">-35.17</td>
+<td align="right">173.16</td>
+<td align="right">73.04</td>
+<td align="right">5.08</td>
+</tr>
+<tr>
+<td>zwedru</td>
+<td align="right">24</td>
+<td>LR</td>
+<td>03/22/19</td>
+<td align="right">91</td>
+<td align="right">6.07</td>
+<td align="right">-8.13</td>
+<td align="right">72.86</td>
+<td align="right">4.18</td>
+</tr>
+<tr>
+<td>omsukchan</td>
+<td align="right">36</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">80</td>
+<td align="right">62.53</td>
+<td align="right">155.8</td>
+<td align="right">18.68</td>
+<td align="right">6.2</td>
+</tr>
+<tr>
+<td>jhinjhak</td>
+<td align="right">0</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">35</td>
+<td align="right">26.58</td>
+<td align="right">79.75</td>
+<td align="right">71.15</td>
+<td align="right">9.22</td>
+</tr>
+<tr>
+<td>muros</td>
+<td align="right">0</td>
+<td>ES</td>
+<td>03/22/19</td>
+<td align="right">80</td>
+<td align="right">42.77</td>
+<td align="right">-9.06</td>
+<td align="right">55</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>itoman</td>
+<td align="right">90</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">68</td>
+<td align="right">26.12</td>
+<td align="right">127.67</td>
+<td align="right">71.6</td>
+<td align="right">12.75</td>
+</tr>
+<tr>
+<td>lushunkou</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>katsuura</td>
+<td align="right">75</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">46</td>
+<td align="right">33.93</td>
+<td align="right">134.5</td>
+<td align="right">50</td>
+<td align="right">13.87</td>
+</tr>
+<tr>
+<td>salvador</td>
+<td align="right">75</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">94</td>
+<td align="right">-12.98</td>
+<td align="right">-38.48</td>
+<td align="right">78.8</td>
+<td align="right">10.29</td>
+</tr>
+<tr>
+<td>aflu</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>itarema</td>
+<td align="right">44</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">-2.92</td>
+<td align="right">-39.92</td>
+<td align="right">74.21</td>
+<td align="right">2.17</td>
+</tr>
+<tr>
+<td>tianpeng</td>
+<td align="right">92</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">28.88</td>
+<td align="right">112.34</td>
+<td align="right">50.63</td>
+<td align="right">8.77</td>
+</tr>
+<tr>
+<td>nome</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">30.04</td>
+<td align="right">-94.42</td>
+<td align="right">64</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>galveston</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">40.58</td>
+<td align="right">-86.19</td>
+<td align="right">32</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>shenjiamen</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">91</td>
+<td align="right">29.96</td>
+<td align="right">122.3</td>
+<td align="right">52.52</td>
+<td align="right">12.46</td>
+</tr>
+<tr>
+<td>greensburg</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">30.83</td>
+<td align="right">-90.67</td>
+<td align="right">59</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>san jose</td>
+<td align="right">0</td>
+<td>PH</td>
+<td>03/22/19</td>
+<td align="right">58</td>
+<td align="right">15.79</td>
+<td align="right">120.99</td>
+<td align="right">84.38</td>
+<td align="right">3.18</td>
+</tr>
+<tr>
+<td>richards bay</td>
+<td align="right">80</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">-28.77</td>
+<td align="right">32.06</td>
+<td align="right">67.1</td>
+<td align="right">2.17</td>
+</tr>
+<tr>
+<td>qujing</td>
+<td align="right">32</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">45</td>
+<td align="right">25.49</td>
+<td align="right">103.8</td>
+<td align="right">63.5</td>
+<td align="right">10.45</td>
+</tr>
+<tr>
+<td>lovozero</td>
+<td align="right">80</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">68.01</td>
+<td align="right">35.02</td>
+<td align="right">22.73</td>
+<td align="right">10.78</td>
+</tr>
+<tr>
+<td>samalaeulu</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>kruisfontein</td>
+<td align="right">32</td>
+<td>ZA</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">-34</td>
+<td align="right">24.73</td>
+<td align="right">64.85</td>
+<td align="right">8.43</td>
+</tr>
+<tr>
+<td>huarmey</td>
+<td align="right">8</td>
+<td>PE</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">-10.07</td>
+<td align="right">-78.15</td>
+<td align="right">65.57</td>
+<td align="right">3.18</td>
+</tr>
+<tr>
+<td>bonavista</td>
+<td align="right">92</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">89</td>
+<td align="right">48.65</td>
+<td align="right">-53.11</td>
+<td align="right">33.01</td>
+<td align="right">5.99</td>
+</tr>
+<tr>
+<td>port hueneme</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">34.15</td>
+<td align="right">-119.2</td>
+<td align="right">57.2</td>
+<td align="right">12.24</td>
+</tr>
+<tr>
+<td>zabalj</td>
+<td align="right">0</td>
+<td>RS</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">45.37</td>
+<td align="right">20.06</td>
+<td align="right">39.99</td>
+<td align="right">1.12</td>
+</tr>
+<tr>
+<td>dawson creek</td>
+<td align="right">1</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">80</td>
+<td align="right">55.76</td>
+<td align="right">-120.23</td>
+<td align="right">44.6</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>devils lake</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">48.11</td>
+<td align="right">-98.87</td>
+<td align="right">26.6</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>kodinsk</td>
+<td align="right">0</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">58.6</td>
+<td align="right">99.18</td>
+<td align="right">30.83</td>
+<td align="right">6.87</td>
+</tr>
+<tr>
+<td>powell river</td>
+<td align="right">90</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">49.84</td>
+<td align="right">-124.52</td>
+<td align="right">53.01</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>vanimo</td>
+<td align="right">48</td>
+<td>PG</td>
+<td>03/22/19</td>
+<td align="right">99</td>
+<td align="right">-2.67</td>
+<td align="right">141.3</td>
+<td align="right">83.03</td>
+<td align="right">11.56</td>
+</tr>
+<tr>
+<td>araouane</td>
+<td align="right">88</td>
+<td>ML</td>
+<td>03/22/19</td>
+<td align="right">21</td>
+<td align="right">18.9</td>
+<td align="right">-3.53</td>
+<td align="right">69.8</td>
+<td align="right">10.22</td>
+</tr>
+<tr>
+<td>krasnoyarka</td>
+<td align="right">90</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">55.33</td>
+<td align="right">73.1</td>
+<td align="right">24.8</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>creel</td>
+<td align="right">0</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">30</td>
+<td align="right">27.75</td>
+<td align="right">-107.63</td>
+<td align="right">45.68</td>
+<td align="right">4.07</td>
+</tr>
+<tr>
+<td>palauig</td>
+<td align="right">0</td>
+<td>PH</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">15.44</td>
+<td align="right">119.9</td>
+<td align="right">85.55</td>
+<td align="right">2.28</td>
+</tr>
+<tr>
+<td>kalmunai</td>
+<td align="right">0</td>
+<td>LK</td>
+<td>03/22/19</td>
+<td align="right">84</td>
+<td align="right">7.42</td>
+<td align="right">81.82</td>
+<td align="right">82.94</td>
+<td align="right">4.18</td>
+</tr>
+<tr>
+<td>padang</td>
+<td align="right">20</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">-0.92</td>
+<td align="right">100.36</td>
+<td align="right">87.8</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>altay</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">55</td>
+<td align="right">47.83</td>
+<td align="right">88.13</td>
+<td align="right">19.13</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>isangel</td>
+<td align="right">75</td>
+<td>VU</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">-19.55</td>
+<td align="right">169.27</td>
+<td align="right">87.8</td>
+<td align="right">16.11</td>
+</tr>
+<tr>
+<td>sarab</td>
+<td align="right">76</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">38.61</td>
+<td align="right">44.99</td>
+<td align="right">28.85</td>
+<td align="right">1.95</td>
+</tr>
+<tr>
+<td>henties bay</td>
+<td align="right">0</td>
+<td> </td>
+<td>03/22/19</td>
+<td align="right">90</td>
+<td align="right">-22.12</td>
+<td align="right">14.28</td>
+<td align="right">61</td>
+<td align="right">5.01</td>
+</tr>
+<tr>
+<td>shenxian</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">30</td>
+<td align="right">36.24</td>
+<td align="right">115.67</td>
+<td align="right">51.08</td>
+<td align="right">16.6</td>
+</tr>
+<tr>
+<td>nemuro</td>
+<td align="right">40</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">46</td>
+<td align="right">43.32</td>
+<td align="right">145.57</td>
+<td align="right">28.4</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>itapecerica da serra</td>
+<td align="right">75</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">82</td>
+<td align="right">-23.72</td>
+<td align="right">-46.85</td>
+<td align="right">70</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>seoul</td>
+<td align="right">90</td>
+<td>KR</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">37.57</td>
+<td align="right">126.98</td>
+<td align="right">46.4</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>along</td>
+<td align="right">92</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">28.17</td>
+<td align="right">94.8</td>
+<td align="right">54.32</td>
+<td align="right">1.95</td>
+</tr>
+<tr>
+<td>abu kamal</td>
+<td align="right">92</td>
+<td>SY</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">34.45</td>
+<td align="right">40.92</td>
+<td align="right">50.27</td>
+<td align="right">7.65</td>
+</tr>
+<tr>
+<td>emerald</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">43</td>
+<td align="right">-23.53</td>
+<td align="right">148.16</td>
+<td align="right">91</td>
+<td align="right">13.87</td>
+</tr>
+<tr>
+<td>payo</td>
+<td align="right">64</td>
+<td>ID</td>
+<td>03/22/19</td>
+<td align="right">98</td>
+<td align="right">-3.75</td>
+<td align="right">103.64</td>
+<td align="right">77.99</td>
+<td align="right">4.41</td>
+</tr>
+<tr>
+<td>soto la marina</td>
+<td align="right">68</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">23.77</td>
+<td align="right">-98.21</td>
+<td align="right">69.98</td>
+<td align="right">12.68</td>
+</tr>
+<tr>
+<td>cartagena</td>
+<td align="right">0</td>
+<td>ES</td>
+<td>03/22/19</td>
+<td align="right">72</td>
+<td align="right">37.63</td>
+<td align="right">-1</td>
+<td align="right">59</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>limbang</td>
+<td align="right">75</td>
+<td>BN</td>
+<td>03/22/19</td>
+<td align="right">59</td>
+<td align="right">4.75</td>
+<td align="right">115.01</td>
+<td align="right">89.6</td>
+<td align="right">2.24</td>
+</tr>
+<tr>
+<td>rancho palos verdes</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">67</td>
+<td align="right">33.75</td>
+<td align="right">-118.37</td>
+<td align="right">60.01</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>waiouru</td>
+<td align="right">76</td>
+<td>NZ</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">-39.48</td>
+<td align="right">175.67</td>
+<td align="right">66.11</td>
+<td align="right">4.29</td>
+</tr>
+<tr>
+<td>tursunzoda</td>
+<td align="right">90</td>
+<td>UZ</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">38.51</td>
+<td align="right">68.23</td>
+<td align="right">50</td>
+<td align="right">8.95</td>
+</tr>
+<tr>
+<td>sivas</td>
+<td align="right">0</td>
+<td>TR</td>
+<td>03/22/19</td>
+<td align="right">85</td>
+<td align="right">39.75</td>
+<td align="right">37.01</td>
+<td align="right">23</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>cangzhou</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">50</td>
+<td align="right">38.3</td>
+<td align="right">116.85</td>
+<td align="right">45.77</td>
+<td align="right">12.01</td>
+</tr>
+<tr>
+<td>bushehr</td>
+<td align="right">40</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">28.97</td>
+<td align="right">50.84</td>
+<td align="right">64.4</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>roma</td>
+<td align="right">0</td>
+<td>IT</td>
+<td>03/22/19</td>
+<td align="right">70</td>
+<td align="right">41.89</td>
+<td align="right">12.48</td>
+<td align="right">54</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>mackenzie</td>
+<td align="right">75</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">55.34</td>
+<td align="right">-123.09</td>
+<td align="right">37.4</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>alice springs</td>
+<td align="right">0</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">15</td>
+<td align="right">-23.7</td>
+<td align="right">133.88</td>
+<td align="right">102.2</td>
+<td align="right">11.41</td>
+</tr>
+<tr>
+<td>sao joao da barra</td>
+<td align="right">92</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">97</td>
+<td align="right">-21.64</td>
+<td align="right">-41.05</td>
+<td align="right">79.88</td>
+<td align="right">14.25</td>
+</tr>
+<tr>
+<td>nuuk</td>
+<td align="right">48</td>
+<td>GL</td>
+<td>03/22/19</td>
+<td align="right">71</td>
+<td align="right">64.17</td>
+<td align="right">-51.74</td>
+<td align="right">3.2</td>
+<td align="right">13.87</td>
+</tr>
+<tr>
+<td>jamsa</td>
+<td align="right">75</td>
+<td>FI</td>
+<td>03/22/19</td>
+<td align="right">59</td>
+<td align="right">61.86</td>
+<td align="right">25.19</td>
+<td align="right">37</td>
+<td align="right">17.22</td>
+</tr>
+<tr>
+<td>weligama</td>
+<td align="right">0</td>
+<td>LK</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">5.97</td>
+<td align="right">80.42</td>
+<td align="right">82.22</td>
+<td align="right">4.41</td>
+</tr>
+<tr>
+<td>jining</td>
+<td align="right">0</td>
+<td>CN</td>
+<td>03/22/19</td>
+<td align="right">31</td>
+<td align="right">35.41</td>
+<td align="right">116.58</td>
+<td align="right">53.87</td>
+<td align="right">14.81</td>
+</tr>
+<tr>
+<td>lasa</td>
+<td align="right">20</td>
+<td>CY</td>
+<td>03/22/19</td>
+<td align="right">58</td>
+<td align="right">34.92</td>
+<td align="right">32.53</td>
+<td align="right">55.4</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>cabimas</td>
+<td align="right">32</td>
+<td>VE</td>
+<td>03/22/19</td>
+<td align="right">93</td>
+<td align="right">10.39</td>
+<td align="right">-71.44</td>
+<td align="right">80.69</td>
+<td align="right">9.78</td>
+</tr>
+<tr>
+<td>dolinsk</td>
+<td align="right">75</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">49</td>
+<td align="right">47.32</td>
+<td align="right">142.8</td>
+<td align="right">23</td>
+<td align="right">13.42</td>
+</tr>
+<tr>
+<td>ofunato</td>
+<td align="right">75</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">56</td>
+<td align="right">39.11</td>
+<td align="right">141.75</td>
+<td align="right">41</td>
+<td align="right">8.05</td>
+</tr>
+<tr>
+<td>kutum</td>
+<td align="right">0</td>
+<td>SD</td>
+<td>03/22/19</td>
+<td align="right">30</td>
+<td align="right">14.2</td>
+<td align="right">24.66</td>
+<td align="right">60.08</td>
+<td align="right">7.87</td>
+</tr>
+<tr>
+<td>sao miguel do araguaia</td>
+<td align="right">20</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">95</td>
+<td align="right">-13.28</td>
+<td align="right">-50.16</td>
+<td align="right">74.39</td>
+<td align="right">4.18</td>
+</tr>
+<tr>
+<td>petropavlovsk-kamchatskiy</td>
+<td align="right">40</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">53.05</td>
+<td align="right">158.65</td>
+<td align="right">33.8</td>
+<td align="right">11.18</td>
+</tr>
+<tr>
+<td>tacuarembo</td>
+<td align="right">0</td>
+<td>UY</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">-31.73</td>
+<td align="right">-55.98</td>
+<td align="right">51.62</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>fortuna</td>
+<td align="right">20</td>
+<td>ES</td>
+<td>03/22/19</td>
+<td align="right">66</td>
+<td align="right">38.18</td>
+<td align="right">-1.13</td>
+<td align="right">59</td>
+<td align="right">1.12</td>
+</tr>
+<tr>
+<td>ust-nera</td>
+<td align="right">32</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">75</td>
+<td align="right">64.57</td>
+<td align="right">143.24</td>
+<td align="right">4.82</td>
+<td align="right">2.17</td>
+</tr>
+<tr>
+<td>goderich</td>
+<td align="right">0</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">78</td>
+<td align="right">43.74</td>
+<td align="right">-81.71</td>
+<td align="right">33.01</td>
+<td align="right">20.07</td>
+</tr>
+<tr>
+<td>nadadores</td>
+<td align="right">48</td>
+<td>MX</td>
+<td>03/22/19</td>
+<td align="right">60</td>
+<td align="right">27.03</td>
+<td align="right">-101.59</td>
+<td align="right">71.01</td>
+<td align="right">1.99</td>
+</tr>
+<tr>
+<td>solone</td>
+<td align="right">0</td>
+<td>UA</td>
+<td>03/22/19</td>
+<td align="right">64</td>
+<td align="right">48.2</td>
+<td align="right">34.88</td>
+<td align="right">35.6</td>
+<td align="right">20.13</td>
+</tr>
+<tr>
+<td>shalakusha</td>
+<td align="right">80</td>
+<td>RU</td>
+<td>03/22/19</td>
+<td align="right">92</td>
+<td align="right">62.23</td>
+<td align="right">40.26</td>
+<td align="right">27.59</td>
+<td align="right">2.73</td>
+</tr>
+<tr>
+<td>chilca</td>
+<td align="right">75</td>
+<td>PE</td>
+<td>03/22/19</td>
+<td align="right">81</td>
+<td align="right">-13.22</td>
+<td align="right">-72.34</td>
+<td align="right">51.8</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>norden</td>
+<td align="right">90</td>
+<td>DE</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">53.59</td>
+<td align="right">7.21</td>
+<td align="right">44.01</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>klamath falls</td>
+<td align="right">90</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">86</td>
+<td align="right">42.22</td>
+<td align="right">-121.78</td>
+<td align="right">41</td>
+<td align="right">3.36</td>
+</tr>
+<tr>
+<td>puerto cortes</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>zemio</td>
+<td align="right">8</td>
+<td>CF</td>
+<td>03/22/19</td>
+<td align="right">83</td>
+<td align="right">5.02</td>
+<td align="right">25.13</td>
+<td align="right">70.07</td>
+<td align="right">2.28</td>
+</tr>
+<tr>
+<td>santa barbara</td>
+<td align="right">1</td>
+<td>US</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">34.42</td>
+<td align="right">-119.7</td>
+<td align="right">57.2</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>macaboboni</td>
+<td align="right"></td>
+<td> </td>
+<td>12/31/69</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>bara</td>
+<td align="right">88</td>
+<td>NG</td>
+<td>03/22/19</td>
+<td align="right">47</td>
+<td align="right">10.41</td>
+<td align="right">10.6</td>
+<td align="right">78.98</td>
+<td align="right">5.86</td>
+</tr>
+<tr>
+<td>joetsu</td>
+<td align="right">76</td>
+<td>JP</td>
+<td>03/22/19</td>
+<td align="right">100</td>
+<td align="right">37.15</td>
+<td align="right">138.24</td>
+<td align="right">40.1</td>
+<td align="right">7.31</td>
+</tr>
+<tr>
+<td>mehamn</td>
+<td align="right">88</td>
+<td>NO</td>
+<td>03/22/19</td>
+<td align="right">87</td>
+<td align="right">71.03</td>
+<td align="right">27.85</td>
+<td align="right">31.91</td>
+<td align="right">20.96</td>
+</tr>
+<tr>
+<td>tutoia</td>
+<td align="right">88</td>
+<td>BR</td>
+<td>03/22/19</td>
+<td align="right">97</td>
+<td align="right">-2.76</td>
+<td align="right">-42.27</td>
+<td align="right">76.1</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>kiama</td>
+<td align="right">40</td>
+<td>AU</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">-34.67</td>
+<td align="right">150.86</td>
+<td align="right">80.01</td>
+<td align="right">9.17</td>
+</tr>
+<tr>
+<td>fare</td>
+<td align="right">32</td>
+<td>PF</td>
+<td>03/22/19</td>
+<td align="right">96</td>
+<td align="right">-16.7</td>
+<td align="right">-151.02</td>
+<td align="right">85.37</td>
+<td align="right">7.87</td>
+</tr>
+<tr>
+<td>dourbali</td>
+<td align="right">0</td>
+<td>TD</td>
+<td>03/22/19</td>
+<td align="right">65</td>
+<td align="right">11.81</td>
+<td align="right">15.86</td>
+<td align="right">73.58</td>
+<td align="right">2.95</td>
+</tr>
+<tr>
+<td>husavik</td>
+<td align="right">0</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">79</td>
+<td align="right">50.56</td>
+<td align="right">-96.99</td>
+<td align="right">30.99</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td>kazerun</td>
+<td align="right">12</td>
+<td>IR</td>
+<td>03/22/19</td>
+<td align="right">74</td>
+<td align="right">29.62</td>
+<td align="right">51.65</td>
+<td align="right">44.87</td>
+<td align="right">2.17</td>
+</tr>
+<tr>
+<td>itanagar</td>
+<td align="right">75</td>
+<td>IN</td>
+<td>03/22/19</td>
+<td align="right">88</td>
+<td align="right">27.1</td>
+<td align="right">93.63</td>
+<td align="right">66.2</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>bhola</td>
+<td align="right">40</td>
+<td>PK</td>
+<td>03/22/19</td>
+<td align="right">63</td>
+<td align="right">32.66</td>
+<td align="right">73.89</td>
+<td align="right">62.6</td>
+<td align="right">6.93</td>
+</tr>
+<tr>
+<td>mackay</td>
+<td align="right">1</td>
+<td>CA</td>
+<td>03/22/19</td>
+<td align="right">45</td>
+<td align="right">53.65</td>
+<td align="right">-115.58</td>
+<td align="right">46.4</td>
+<td align="right">2.24</td>
+</tr>
+</tbody></table>
